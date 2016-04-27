@@ -1,5 +1,5 @@
 var SessionStore = require('../stores/session_store');
-var UserActions = require('../actions/user_actions');
+var SessionActions = require('../actions/client_actions/session_actions');
 
 module.exports = {
   getInitialState: function () {
@@ -12,7 +12,7 @@ module.exports = {
   componentDidMount: function () {
     SessionStore.addListener(this.updateCurrentUser);
     if (typeof SessionStore.currentUser()=== 'undefined'){
-      UserActions.fetchCurrentUser();
+      SessionActions.fetchCurrentUser();
     }
   },
 

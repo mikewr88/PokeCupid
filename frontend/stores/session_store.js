@@ -11,6 +11,9 @@ SessionStore.__onDispatch = function (payload) {
     case SessionConstants.LOGIN:
       SessionStore.login(payload.user);
       break;
+    case SessionConstants.SIGNUP:
+      SessionStore.signUp(payload.user);
+      break;
     case SessionConstants.LOGOUT:
       SessionStore.logout();
       break;
@@ -24,6 +27,13 @@ SessionStore.__onDispatch = function (payload) {
 SessionStore.login = function (user) {
   _currentUser = user;
   _authErrors = null;
+  if (user){
+    console.log("you are logged in");
+  }
+};
+
+SessionStore.signUp = function (user) {
+  SessionStore.login(user);
 };
 
 SessionStore.logout = function () {
