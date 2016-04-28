@@ -15,8 +15,8 @@ class Api::SessionsController < ApplicationController
       @user = current_user
       render 'api/users/show'
     else
-      @errors = ['There is no one logged in']
-      render 'api/shared/error', status: 404
+      @errors = nil
+      render json: nil
     end
 
   end
@@ -28,6 +28,7 @@ class Api::SessionsController < ApplicationController
       logout
       render 'api/users/show'
     else
+      # logout
       @errors = ['no one is logged in']
       render 'api/shared/error', status: 404
     end

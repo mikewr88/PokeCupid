@@ -1,4 +1,6 @@
 var SessionServerActions = require('../actions/server_actions/session_server_actions');
+var hashHistory = require('react-router').hashHistory;
+
 
 module.exports = {
   fetchCurrentUser: function () {
@@ -7,12 +9,12 @@ module.exports = {
       method: 'GET',
       success:  function (user) {
         SessionServerActions.logIn(user);
+
       }
     });
   },
 
   signUp: function (data) {
-    console.log('here');
     $.ajax({
       method: 'POST',
       url: '/api/user',
@@ -20,6 +22,7 @@ module.exports = {
       data: {user: {username: data.username, password: data.password, gender: data.gender, location: data.location, trainer_type: data.trainer_type}},
       success: function (user) {
         SessionServerActions.signUp(user);
+        hashHistory.push('/trainer-home');
       }
     });
   },
@@ -31,6 +34,8 @@ module.exports = {
       data: {user: {username: data.username, password: data.password}},
       success: function (user) {
         SessionServerActions.logIn(user);
+        hashHistory.push('/trainer-home');
+
       }
     });
   },
@@ -41,6 +46,7 @@ module.exports = {
       url: '/api/session',
       success: function () {
         SessionServerActions.logOut();
+        hashHistory.push('/login');
       }
     });
   }

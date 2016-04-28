@@ -9,9 +9,8 @@ var hashHistory = require('react-router').hashHistory;
 module.exports = React.createClass({
   mixins: [CurrentUserStateMixin],
   componentWillMount: function () {
-    if (!this.state.currentUser){
-      hashHistory.pushState('/login');
-    }
+    SessionStore.addListener(this.redirect);
+
   },
 
   handleLogOut: function (event) {
@@ -19,15 +18,21 @@ module.exports = React.createClass({
     SessionActions.logOut();
   },
 
-  onChange: function () {
-    if (!this.state.currentUser){
-      hashHistory.pushState('/login');
+  redirect: function () {
+    if (!SessionStore.currentUser()){
+      hashHistory.push('/login');
     }
   },
 
-  componentDidMount: function () {
-    SessionStore.addListener(this.onChange);
-  },
+  // onChange: function () {
+  //   if (!this.state.currentUser){
+  //     hashHistory.push('/login');
+  //   }
+  // },
+
+  // componentDidMount: function () {
+  //   SessionStore.addListener(this.onChange);
+  // },
 
   render: function () {
 

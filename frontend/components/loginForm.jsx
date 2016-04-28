@@ -4,6 +4,7 @@ var SessionStore = require('../stores/session_store');
 var CurrentUserStateMixin = require('../mixins/current_user_state');
 var SessionActions = require('../actions/client_actions/session_actions');
 var hashHistory = require('react-router').hashHistory;
+var Modal = require("react-modal");
 
 
 module.exports = React.createClass({
@@ -11,19 +12,19 @@ module.exports = React.createClass({
 
   componentWillMount: function () {
     if (this.state.currentUser){
-      hashHistory.pushState('/trainer-home');
+      hashHistory.push('/trainer-home');
     }
   },
 
-  onChange: function () {
-    if (this.state.currentUser){
-      hashHistory.pushState('/trainer-home');
-    }
-  },
+  // onChange: function () {
+  //   if (this.state.currentUser){
+  //     hashHistory.push('/trainer-home');
+  //   }
+  // },
 
-  componentDidMount: function () {
-    SessionStore.addListener(this.onChange);
-  },
+  // componentDidMount: function () {
+  //   SessionStore.addListener(this.onChange);
+  // },
 
   getInitialState: function () {
     return {form: 'login'};

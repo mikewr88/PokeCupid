@@ -10,26 +10,29 @@ SessionStore.__onDispatch = function (payload) {
   switch (payload.actionType) {
     case SessionConstants.LOGIN:
       SessionStore.login(payload.user);
+      SessionStore.__emitChange();
       break;
     case SessionConstants.SIGNUP:
       SessionStore.signUp(payload.user);
+      SessionStore.__emitChange();
       break;
     case SessionConstants.LOGOUT:
       SessionStore.logout();
+      SessionStore.__emitChange();
       break;
     case SessionConstants.ERROR:
       SessionStore.setErrors(payload.errors);
+      SessionStore.__emitChange();
       break;
   }
-  SessionStore.__emitChange();
+
 };
 
 SessionStore.login = function (user) {
+  console.log(user);
+  console.log('session store login');
   _currentUser = user;
   _authErrors = null;
-  if (user){
-    console.log("you are logged in");
-  }
 };
 
 SessionStore.signUp = function (user) {
