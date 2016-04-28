@@ -13,3 +13,16 @@
  *= require_tree .
  *= require_self
  */
+
+#login-button {
+  color: white;
+  background-color: blue;
+  border-radius: 10px/10px;
+  border-color: white;
+  padding: 2px;
+}
+
+.logo {
+  height: 100px;
+  width: 100px;
+}

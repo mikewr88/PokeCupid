@@ -18,6 +18,7 @@ var React = require('react'),
     render: function () {
       return (
         <div>
+          <img src="http://i.imgur.com/wOIqRXY.jpg" className='logo'></img>
           <h1>PokeCupid</h1>
           {this.props.children}
         </div>
