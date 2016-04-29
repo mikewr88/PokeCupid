@@ -6,6 +6,8 @@ var SessionActions = require('../actions/client_actions/session_actions');
 var hashHistory = require('react-router').hashHistory;
 var Modal = require("react-modal");
 var ModalStyle = require("../constants/LoginModalConstant");
+var Dropdown = require("./loginDropdown");
+var UserConstants = require("../constants/user_constants");
 
 module.exports = React.createClass({
   mixins: [LinkedStateMixin, CurrentUserStateMixin],
@@ -17,7 +19,11 @@ module.exports = React.createClass({
   },
 
   getInitialState: function () {
-    return {form: 'login', modalOpen: false};
+    return {form: 'login',
+            modalOpen: false,
+            location: "Pallet Town",
+            trainer_type: "water",
+            gender: "♂"};
   },
 
   openModal: function () {
@@ -26,7 +32,7 @@ module.exports = React.createClass({
 
   closeModal: function (event) {
     this.setState({modalOpen: false});
-    
+
   },
 
   logInModal: function (event) {
@@ -36,6 +42,21 @@ module.exports = React.createClass({
 
   setForm: function (value) {
     this.setState({form: value});
+  },
+
+  handleLocationDropdown: function (event) {
+    event.preventDefault();
+    this.setState({location: event.target.value});
+  },
+
+  handleTypeDropdown: function (event) {
+    event.preventDefault();
+    this.setState({trainer_type: event.target.value});
+  },
+
+  handleGenderDropdown: function (event) {
+    event.preventDefault();
+    this.setState({gender: event.target.value});
   },
 
   handleLogIn: function (event) {
@@ -53,9 +74,9 @@ module.exports = React.createClass({
     SessionActions.signUp({
         username: this.state.username,
         password: this.state.password,
-        gender: "M",
-        location: "Kanto",
-        trainer_type: "water"
+        gender: this.state.gender,
+        location: this.state.location,
+        trainer_type: this.state.trainer_type
     });
   },
 
@@ -72,7 +93,7 @@ module.exports = React.createClass({
             <h2>Log Into Your PokeCupid Account</h2>
             <form>
               <label>Username:
-                <input type='text' valueLink={this.linkState('username')}></input>
+                <input type='text' valueLink={this.linkState('username')} autofocus></input>
               </label>
                 <br></br>
               <label>Password:
@@ -87,12 +108,36 @@ module.exports = React.createClass({
 
         <form >
           <label>Username:
-            <input type='text' valueLink={this.linkState('username')}></input>
+            <input type='text' valueLink={this.linkState('username')} autofocus></input>
           </label>
           <br></br>
+
           <label>Password:
             <input type='password' valueLink={this.linkState('password')}></input>
           </label>
+          <br></br>
+          <label>Location:
+            <Dropdown catKey="location"
+                      value={this.state.location}
+                      category={UserConstants.location}
+                      onChange={this.handleLocationDropdown}></Dropdown>
+          </label>
+          <br></br>
+          <label>Trainer Type:
+            <Dropdown catKey="trainer_type"
+                      value={this.state.trainer_type}
+                      category={UserConstants.trainer_type}
+                      onChange={this.handleTypeDropdown}></Dropdown>
+          </label>
+          <br></br>
+          <label>Gender:
+            <Dropdown catKey="gender"
+                      value={this.state.gender}
+                      category={UserConstants.gender}
+                      onChange={this.handleGenderDropdown}></Dropdown>
+          </label>
+          <br></br>
+
           <br></br>
 
           <button onClick={this.handleSignUp} value='signUp' >Sign Up!</button>

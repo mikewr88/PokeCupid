@@ -45,7 +45,7 @@ PokeCupid will allow users to do the following:
 
 ## Implementation Timeline
 
-### Phase 1: Backend setup and User Authentication (0.5 days)
+### Phase 1: Backend setup and User Authentication (1.5 days)
 
 **Objective:** Functioning rails project with Authentication
 
@@ -55,23 +55,15 @@ PokeCupid will allow users to do the following:
 - [ ] user signup/signin pages
 - [ ] blank landing page after signin
 
-### Phase 2: Pokemon Model, API, and basic APIUtil (1.5 days)
+### Phase 2: Trainer Model, API, and basic APIUtil (2 days)
 
 **Objective:** Pokemon can be created, viewed, destroyed through
 the API.
 
-- [ ] create `Pokemon` model
-- [ ] seed the database with a small amount of test data
-- [ ] CRUD API for Pokemon (`PokemonsController`)
-- [ ] jBuilder views for Pokemon and Users
+- [ ] jBuilder views for Users
 - [ ] setup Webpack & Flux scaffold
 - [ ] setup `APIUtil` to interact with the API
 - [ ] test out API interaction in the console.
-
-### Phase 3: Flux Architecture and Router (2.5 days)
-
-**Objective:** Able to view pages for Trainers and Pokemon. Links to other pages work
-
 - [ ] setup the flux loop with skeleton files
 - [ ] setup React Router
 - implement each Trainer component, building out the flux loop as needed.
@@ -80,23 +72,34 @@ the API.
   - [ ] `SearchIndex`
   - [ ] `VisitedIndex`
   - [ ] `TrainerDetail`
+
+### Phase 3: Flux Architecture and Router and NavBar (2.5 days)
+
+**Objective:** Able to view pages for Trainers and Pokemon. Links to other pages work. NavBar will allow links
+to other pages as well
+
+- [ ] create NavBar
+- [ ] create a basic style guide
+- [ ] position elements on the page
+- [ ] add basic colors & styles
+- [ ] add either video or slideshow to root splash page
+- [ ] make notification bubbles for visited and likes
+
+### Phase 4: Pokemon and Start Styling (1.5 days)
+
+**Objective:** Existing pages (including singup/signin) will look good. Pokemon can be created, viewed, destroyed through
+the API.
+
+- [ ] create `Pokemon` model
+- [ ] seed the database with a small amount of test data
+- [ ] CRUD API for Pokemon (`PokemonsController`)
+- [ ] jBuilder views for Pokemon
 - implement each Pokemon component, building out the flux loop as needed.
   - [ ] `PokemonIndex`
   - [ ] `PokemonDetail`
   - [ ] `PokemonForm`
 - [ ] can search for a user and screen will populate with matches to search string
 - [ ] can create and remove Pokemon for your profile
-
-### Phase 4: NavBar and Start Styling (1.5 day)
-
-**Objective:** Existing pages (including singup/signin) will look good. NavBar will allow links
-to other pages as well as be styled
-
-- [ ] create a basic style guide
-- [ ] position elements on the page
-- [ ] add basic colors & styles
-- [ ] add either video or slideshow to root splash page
-- [ ] make notification bubbles for visited and likes
 
 ### Phase 5: Likes and Visitors (1.5 days)
 
