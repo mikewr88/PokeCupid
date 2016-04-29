@@ -5,7 +5,7 @@ var CONTENT_STYLE = {
     left            : 0,
     right           : 0,
     bottom          : 0,
-    backgroundColor : 'rgba(43, 55, 105, 1)',
+    backgroundColor : 'rgba(43, 55, 105, 0)',
     zindex         : 10
   },
 content : {
@@ -13,7 +13,7 @@ content : {
     top             : '100px',
     left            : '150px',
     right           : '150px',
-    bottom          : '100px',
+    bottom          : '150px',
     border          : '1px solid #ccc',
     padding         : '20px',
     zindex         : 11

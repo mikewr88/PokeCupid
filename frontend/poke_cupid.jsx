@@ -18,8 +18,6 @@ var React = require('react'),
     render: function () {
       return (
         <div>
-          <img src="http://i.imgur.com/wOIqRXY.jpg" className='logo'></img>
-          <h1>PokeCupid</h1>
           {this.props.children}
         </div>
       );
@@ -28,7 +26,7 @@ var React = require('react'),
 
   var routes = (
     <Route path ='/' component={App}>
-      <Route path='login' component={LoginForm}/>
+      <IndexRoute component={LoginForm}/>
       <Route path='trainer-home' component={TrainerHome}/>
 
     </Route>

@@ -14,13 +14,13 @@ var Dropdown = React.createClass({
     for (var key in category){
       dropdownArr.push(
         <option
-          class='dropdown-option' key={num} value={category[key]}>{category[key]}
+          className='dropdown-option' key={num} value={category[key]}>{category[key]}
         </option>
       );
       num++;
     }
     return (
-      <select class='sign-up-dropdown' onChange={this.handleSelection}>
+      <select className='sign-up-dropdown' onChange={this.handleSelection}>
         {dropdownArr}
       </select>
 

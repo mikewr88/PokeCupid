@@ -29,8 +29,6 @@ SessionStore.__onDispatch = function (payload) {
 };
 
 SessionStore.login = function (user) {
-  console.log(user);
-  console.log('session store login');
   _currentUser = user;
   _authErrors = null;
 };

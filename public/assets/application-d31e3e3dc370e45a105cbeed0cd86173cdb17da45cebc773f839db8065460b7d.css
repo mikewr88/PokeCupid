@@ -10,10 +10,21 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
- *= require_self
- */
 
+
+ */
+@font-face {
+  font-family: 'pokemon';
+  src: url(/assets/pokemon_pixel_font-3753067d479c35e0d6bb6ce5d3ad96caa9e82812f37fe5f418f976d9a0f48afa.eot) format("embedded-opentype"), url(/assets/pokemon_pixel_font-9683b774ffb79b40111297ad64aa6d03a71b554141faa252532863ed029ef453.svg) format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/* line 28, /Users/michelemilota/Desktop/react/PokeCupid/app/assets/stylesheets/application.css.scss */
+h1 {
+  font-family: "pokemon";
+}
+
+/* line 33, /Users/michelemilota/Desktop/react/PokeCupid/app/assets/stylesheets/application.css.scss */
 #login-button {
   color: white;
   background-color: blue;
@@ -22,6 +33,7 @@
   padding: 2px;
 }
 
+/* line 41, /Users/michelemilota/Desktop/react/PokeCupid/app/assets/stylesheets/application.css.scss */
 .logo {
   height: 100px;
   width: 100px;

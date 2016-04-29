@@ -1,0 +1,3 @@
+module.exports = {
+  TRAINERS_RECEIVED: "TRAINERS_RECEIVED"
+};

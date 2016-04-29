@@ -1,0 +1,163 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+
+ @font-face {
+   font-family:"Pokemon Pixel Font Regular";
+   src: url("pokemon_pixel_font.eot?") format("eot"),
+        url("pokemon_pixel_font.woff") format("woff"),
+        url("../../fonts/pokemon_pixel_font.ttf") format("truetype"),
+        url("pokemon_pixel_font.svg#Pokemon-Pixel-Font") format("svg");
+   font-weight:normal;
+   font-style:normal;
+ }
+
+ li {
+   list-style: none;
+ }
+
+ .trainer-home-ul {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: flex-start;
+
+ }
+
+ body {
+   font-family: sans-serif;
+   background-image: url(http://i.imgur.com/Vo613Lb.jpg);
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;
+ }
+
+ #poke {
+   font-family: "Pokemon Pixel Font Regular", Fallback, sans-serif;
+   color: rgb(153, 0, 0);
+   font-size: 50px;
+ }
+
+ #cupid {
+   font-family: "Pokemon Pixel Font Regular", Fallback, sans-serif;
+   color: white;
+   font-size: 50px;
+ }
+
+
+#login-button {
+  color: white;
+  background-color: blue;
+  border-radius: 10px/10px;
+  border-color: white;
+  padding: 2px;
+}
+
+.splash-img {
+  z-index: -100;
+  height: 100%;
+  width: 100%;
+}
+
+.logo {
+  height: 100px;
+  width: 100px;
+}
+
+.logo-test {
+  height: 150px;
+  width: 150px;
+}
+
+.trainer-index-item {
+  border: 2px solid red;
+
+}
+
+.sign-up-form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  color: rgb(0, 0, 230);
+  font-size: 20px;
+  font-weight: bold;
+  text-shadow: 1px 1px gray;
+}
+
+.sign-up-dropdown {
+  -webkit-appearance: menulist-text;
+  cursor: pointer;
+  padding: 4px;
+  color: white;
+  background: rgb(0, 0, 230);
+  text-align: center;
+}
+
+.sign-up-dropdown:hover {
+  background: rgb(51, 51, 255);
+  transition: background 0.3s ease;
+}
+
+.input-text {
+  background: rgba(230, 230, 230, .4);
+}
+
+.input-text:hover {
+  background: rgba(230, 230, 230, .7);
+}
+
+.input-text:focus {
+  color: rgb(0, 0, 230);
+  background: white;
+  font-family: sans-serif;
+}
+
+#auth-button {
+  border: none;
+  padding: 10px;
+  font: 20px sans-serif;
+  background-color: white;
+  color: rgb(0, 0, 230);
+  transition: padding 0.3s ease-out, font 0.3s linear;
+
+}
+
+#auth-button:hover {
+  cursor: pointer;
+  padding: 15px;
+  font-size: 24px;
+  transition: font 0.3s linear, padding 0.3s ease;
+
+}
+
+.splash-header {
+  display: flex;
+  justify-content: flex-start;
+}
+
+#modal-button {
+  padding: 5px;
+  color: rgb(0, 0, 230);
+  height: 30px;
+
+}
+
+#modal-button-div {
+  display: flex;
+  flex-direction: row-reverse;
+  width: 90%;
+  height: 90%;
+}

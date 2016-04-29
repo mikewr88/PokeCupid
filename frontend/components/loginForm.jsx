@@ -85,19 +85,21 @@ module.exports = React.createClass({
 
       return (
         <div>
-
-        <button onClick={this.openModal} value='logIn' >Already Have An Account?</button>
-
+          <span className='splash-header'>
+            <img src="http://i.imgur.com/wOIqRXY.jpg" className='logo'></img>
+            <h1 id='poke'>Poke</h1><h1 id='cupid'>Cupid</h1>
+            <div id='modal-button-div'>
+              <button id="modal-button" onClick={this.openModal} value='logIn' >Already Have An Account?</button>
+            </div>
+          </span>
 
           <Modal isOpen={this.state.modalOpen} style={ModalStyle} onRequestClose={this.closeModal}>
             <h2>Log Into Your PokeCupid Account</h2>
-            <form>
-              <label>Username:
-                <input type='text' valueLink={this.linkState('username')} autofocus></input>
+            <form login-form>
+              <label>Username:    <input className="input-text" type='text' valueLink={this.linkState('username')} autofocus></input>
               </label>
                 <br></br>
-              <label>Password:
-                <input type='password' valueLink={this.linkState('password')}></input>
+              <label>Password:    <input className="input-text" type='password' valueLink={this.linkState('password')}></input>
               </label>
                 <br></br>
 
@@ -106,32 +108,27 @@ module.exports = React.createClass({
 
           </Modal>
 
-        <form >
-          <label>Username:
-            <input type='text' valueLink={this.linkState('username')} autofocus></input>
+        <form className='sign-up-form'>
+          <label>Username:        <input className="input-text" type='text' valueLink={this.linkState('username')} autofocus></input>
           </label>
           <br></br>
 
-          <label>Password:
-            <input type='password' valueLink={this.linkState('password')}></input>
+          <label>Password:        <input className="input-text" type='password' valueLink={this.linkState('password')}></input>
           </label>
           <br></br>
-          <label>Location:
-            <Dropdown catKey="location"
+          <label>Location:        <Dropdown catKey="location"
                       value={this.state.location}
                       category={UserConstants.location}
                       onChange={this.handleLocationDropdown}></Dropdown>
           </label>
           <br></br>
-          <label>Trainer Type:
-            <Dropdown catKey="trainer_type"
+          <label>Trainer Type:        <Dropdown catKey="trainer_type"
                       value={this.state.trainer_type}
                       category={UserConstants.trainer_type}
                       onChange={this.handleTypeDropdown}></Dropdown>
           </label>
           <br></br>
-          <label>Gender:
-            <Dropdown catKey="gender"
+          <label>Gender:        <Dropdown catKey="gender"
                       value={this.state.gender}
                       category={UserConstants.gender}
                       onChange={this.handleGenderDropdown}></Dropdown>
@@ -140,7 +137,7 @@ module.exports = React.createClass({
 
           <br></br>
 
-          <button onClick={this.handleSignUp} value='signUp' >Sign Up!</button>
+          <button id='auth-button' onClick={this.handleSignUp} value='signUp' >Sign Up!</button>
 
         </form>
 
