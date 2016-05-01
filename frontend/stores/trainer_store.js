@@ -11,17 +11,24 @@ TrainerStore.__onDispatch = function (payload) {
     case TrainerConstants.TRAINERS_RECEIVED:
       TrainerStore.getTrainers(payload.trainers);
       break;
+    case TrainerConstants.TRAINER_RECEIVED:
+      TrainerStore.getTrainer(payload.trainer);
+      break;
   }
   TrainerStore.__emitChange();
 
 };
 
-TrainerStore.getTrainers = function functionName(trainers) {
+TrainerStore.getTrainers = function (trainers) {
   console.log(trainers);
   _trainers = {};
   trainers.forEach(function (trainer) {
     _trainers[trainer.id] = trainer;
   });
+};
+
+TrainerStore.getTrainer = function (trainer) {
+  _trainers[trainer.id] = trainer;
 };
 
 TrainerStore.all = function () {

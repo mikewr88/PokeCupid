@@ -9,5 +9,12 @@ module.exports = {
       trainers: trainers
     });
 
+  },
+
+  receiveTrainer: function (trainer) {
+    AppDispatcher.dispatch({
+      actionType: TrainerConstants.TRAINER_RECEIVED,
+      trainer: trainer
+    });
   }
 };

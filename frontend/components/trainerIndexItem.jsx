@@ -9,13 +9,20 @@ var TrainerActions = require('../actions/client_actions/trainer_actions');
 var TrainerHome = require('./trainerHome');
 
 module.exports = React.createClass({
+  trainerShow: function () {
+    var trainerId = this.props.trainer.id;
+    hashHistory.push("trainer/" + trainerId);
+  },
+
   render: function () {
     var imgUrl ='http://i.imgur.com/wOIqRXY.jpg';
     return (
-      <li className='trainer-index-item'>
+      <li className='trainer-index-item' onClick={this.trainerShow}>
         <img src={imgUrl} className='logo-test'></img>
         <br></br>
         <p>{this.props.trainer.username}</p>
+        <br></br>
+        <p>{this.props.trainer.trainer_type}</p>
       </li>
     );
   }

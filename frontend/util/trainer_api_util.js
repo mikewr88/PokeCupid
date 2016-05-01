@@ -11,5 +11,15 @@ module.exports = {
       }
 
     });
+  },
+
+  fetchTrainer: function (id) {
+      $.ajax({
+        method: "GET",
+        url: 'api/user' + id.toString(),
+        success: function (trainer) {
+          TrainerServerActions.receiveTrainer(trainer);
+        }
+      });
   }
 };

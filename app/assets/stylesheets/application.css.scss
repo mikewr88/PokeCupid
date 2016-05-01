@@ -32,16 +32,22 @@
  .trainer-home-ul {
    display: flex;
    flex-wrap: wrap;
-   justify-content: flex-start;
+   justify-content: space-around;
 
  }
 
  body {
-   font-family: sans-serif;
-   background-image: url(http://i.imgur.com/Vo613Lb.jpg);
-   background-repeat: no-repeat;
-   background-size: cover;
-   background-position: center;
+   font-family: 'Martel Sans', sans-serif;
+   background-color: rgb(175, 52, 59);
+  //  background-image: url(http://i.imgur.com/Vo613Lb.jpg);
+  //  background-repeat: no-repeat;
+  //  background-size: cover;
+  //  background-position: center;
+   margin: 0px;
+ }
+
+ .splash-page {
+   background-color: rgb(175, 52, 59);
  }
 
  #poke {
@@ -52,8 +58,10 @@
 
  #cupid {
    font-family: "Pokemon Pixel Font Regular", Fallback, sans-serif;
-   color: white;
+   color: rgb(155, 158, 183);
    font-size: 50px;
+  //  text-shadow: -1px 0 rgb(153, 0, 0), 0 1px rgb(153, 0, 0), 1px 0 rgb(153, 0, 0), 0 -1px rgb(153, 0, 0);
+
  }
 
 
@@ -74,6 +82,7 @@
 .logo {
   height: 100px;
   width: 100px;
+  clip: rect(10px, 100px, 100px, 10px);
 }
 
 .logo-test {
@@ -82,37 +91,43 @@
 }
 
 .trainer-index-item {
-  border: 2px solid red;
-
+  background: white;
+  border-bottom: 3px gray;
+  border-right: 3px gray;
 }
 
 .sign-up-form {
   display: flex;
   justify-content: center;
+  height: 500px;
   flex-direction: column;
   align-items: center;
-  color: rgb(0, 0, 230);
+  color: white;
   font-size: 20px;
-  font-weight: bold;
-  text-shadow: 1px 1px gray;
+  // font-weight: bold;
+  // text-shadow: 1px 1px gray;
 }
 
 .sign-up-dropdown {
   -webkit-appearance: menulist-text;
+  font-family: 'Martel Sans', sans-serif;
   cursor: pointer;
   padding: 4px;
-  color: white;
-  background: rgb(0, 0, 230);
+  color: rgb(175, 52, 59);
+  background: white;
   text-align: center;
 }
 
 .sign-up-dropdown:hover {
-  background: rgb(51, 51, 255);
+  background: rgb(155, 159, 181);
   transition: background 0.3s ease;
 }
 
 .input-text {
   background: rgba(230, 230, 230, .4);
+  font-size: 15px;
+  border: none;
+  color: rgb(175, 52, 59);
 }
 
 .input-text:hover {
@@ -120,17 +135,17 @@
 }
 
 .input-text:focus {
-  color: rgb(0, 0, 230);
   background: white;
-  font-family: sans-serif;
+  font-family: 'Martel Sans', sans-serif;
 }
 
 #auth-button {
   border: none;
   padding: 10px;
-  font: 20px sans-serif;
+  font-size: 20px;
+  font-family: 'Martel Sans', sans-serif;
   background-color: white;
-  color: rgb(0, 0, 230);
+  color: rgb(175, 52, 59);
   transition: padding 0.3s ease-out, font 0.3s linear;
 
 }
@@ -140,24 +155,95 @@
   padding: 15px;
   font-size: 24px;
   transition: font 0.3s linear, padding 0.3s ease;
+}
 
+#sign-up-bt-div {
+  height: 60px;
 }
 
 .splash-header {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
+  background-color: white;
+
+}
+
+#logo-title {
+  display: flex;
 }
 
 #modal-button {
   padding: 5px;
-  color: rgb(0, 0, 230);
-  height: 30px;
+  background-color: rgb(175, 52, 59);
+  font-family: 'Martel Sans', sans-serif;
+  font-size: 18px;
+  color: white;
+  height: 50px;
+  border: none;
+  transition: padding .3s ease-out;
+}
 
+#modal-button:hover {
+  padding: 10px;
+  transition: padding .3s ease;
+  cursor: pointer;
 }
 
 #modal-button-div {
   display: flex;
-  flex-direction: row-reverse;
-  width: 90%;
-  height: 90%;
+  // flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+  // width: 90%;
+  // height: 90%;
+}
+
+
+.login-modal {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+#login-modal-header {
+  font-size: 30px;
+  color: rgb(175, 52, 59);
+  text-align: center;
+}
+
+#login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: rgb(175, 52, 59);
+  font-size: 20px;
+}
+
+#auth-button.login-button {
+  color: rgb(153, 0, 0);
+  border: solid 2px rgba(175, 52, 59, 1);
+  font-family: 'Martel Sans', sans-serif;
+
+}
+
+.input-text.input-modal {
+  background-color: rgba(175, 52, 59, .5);
+  color: white;
+  font-size: 15px;
+  padding: 5px;
+}
+
+.input-text.input-modal:hover {
+  background-color: rgba(175, 52, 59, 1);
+  transition: background-color .3s ease;
+}
+
+.input-text.input-modal:focus {
+  background-color: rgba(175, 52, 59, 1);
+}
+
+#login-button-container {
+  width: 130px;
+  height: 60px;
 }

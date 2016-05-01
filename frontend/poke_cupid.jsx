@@ -2,6 +2,7 @@ var React = require('react'),
     ReactDOM = require('react-dom'),
     LoginForm = require('./components/loginForm'),
     TrainerHome = require('./components/trainerHome'),
+    TrainerShow = require('./components/trainerShow'),
     Router = require('react-router').Router,
     Route = require('react-router').Route,
     IndexRoute = require('react-router').IndexRoute,
@@ -28,7 +29,7 @@ var React = require('react'),
     <Route path ='/' component={App}>
       <IndexRoute component={LoginForm}/>
       <Route path='trainer-home' component={TrainerHome}/>
-
+      <Route path='trainer/:trainerId' component={TrainerShow}/>
     </Route>
   );
 

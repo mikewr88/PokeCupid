@@ -5,11 +5,13 @@ var CONTENT_STYLE = {
     left            : 0,
     right           : 0,
     bottom          : 0,
-    backgroundColor : 'rgba(43, 55, 105, 0)',
+    backgroundColor : 'rgba(255, 255, 255, .7)',
     zindex         : 10
   },
 content : {
     position        : 'fixed',
+
+    background      : "white",
     top             : '100px',
     left            : '150px',
     right           : '150px',

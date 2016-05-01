@@ -20,6 +20,8 @@ module.exports = React.createClass({
 
   getInitialState: function () {
     return {form: 'login',
+            username: 'username',
+            password: 'password',
             modalOpen: false,
             location: "Pallet Town",
             trainer_type: "water",
@@ -84,32 +86,35 @@ module.exports = React.createClass({
   form: function () {
 
       return (
-        <div>
+        <div className='splash-page'>
           <span className='splash-header'>
-            <img src="http://i.imgur.com/wOIqRXY.jpg" className='logo'></img>
-            <h1 id='poke'>Poke</h1><h1 id='cupid'>Cupid</h1>
+            <div id="logo-title">
+              <img src="http://i.imgur.com/g2sYshv.png" className='logo'></img>
+              <h1 id='poke'>Poke</h1><h1 id='cupid'>Cupid</h1>
+            </div>
             <div id='modal-button-div'>
               <button id="modal-button" onClick={this.openModal} value='logIn' >Already Have An Account?</button>
             </div>
           </span>
 
-          <Modal isOpen={this.state.modalOpen} style={ModalStyle} onRequestClose={this.closeModal}>
-            <h2>Log Into Your PokeCupid Account</h2>
-            <form login-form>
-              <label>Username:    <input className="input-text" type='text' valueLink={this.linkState('username')} autofocus></input>
+          <Modal className="login-modal" isOpen={this.state.modalOpen} style={ModalStyle} onRequestClose={this.closeModal}>
+            <h2 id="login-modal-header">Log Into Your PokeCupid Account</h2>
+            <form id="login-form">
+              <label>Username:        <input className="input-text input-modal" type='text' valueLink={this.linkState('username')} autofocus></input>
               </label>
                 <br></br>
-              <label>Password:    <input className="input-text" type='password' valueLink={this.linkState('password')}></input>
+              <label>Password:        <input className="input-text input-modal" type='password' valueLink={this.linkState('password')}></input>
               </label>
                 <br></br>
-
-              <button id='login-button' onClick={this.logInModal} value="Log In">Log In!</button>
+              <div id="login-button-container">
+                <button id='auth-button' className='login-button' onClick={this.logInModal} value="Log In">Log In!</button>
+              </div>
             </form>
 
           </Modal>
 
         <form className='sign-up-form'>
-          <label>Username:        <input className="input-text" type='text' valueLink={this.linkState('username')} autofocus></input>
+          <label>Username:        <input className="input-text" type='text' valueLink={this.linkState('username')}></input>
           </label>
           <br></br>
 
@@ -133,12 +138,11 @@ module.exports = React.createClass({
                       category={UserConstants.gender}
                       onChange={this.handleGenderDropdown}></Dropdown>
           </label>
-          <br></br>
 
           <br></br>
-
-          <button id='auth-button' onClick={this.handleSignUp} value='signUp' >Sign Up!</button>
-
+          <div id="sign-up-bt-div">
+            <button id='auth-button' onClick={this.handleSignUp} value='signUp' >Sign Up!</button>
+          </div>
         </form>
 
       </div>
