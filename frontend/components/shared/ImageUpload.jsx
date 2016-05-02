@@ -8,7 +8,7 @@ module.exports = React.createClass({
 
   upload: function (event) {
     event.preventDefault();
-    cloudinary.openUploadWidget(window.cloudinary_options, function (error, results) {
+    window.cloudinary.openUploadWidget(window.cloudinary_options, function (error, results) {
       if(!error){
         this.setState({thumbnail: results[0].url});
         this.props.setImage(results[0].url);
