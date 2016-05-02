@@ -20,6 +20,13 @@ module.exports = {
     AppDispatcher.dispatch({
       actionType: SessionConstants.LOGOUT
     });
+  },
+
+  receiveErrors: function(errors) {
+    AppDispatcher.dispatch({
+      actionType: SessionConstants.ERROR,
+      errors: errors
+    });
   }
 
 };

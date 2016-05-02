@@ -4,8 +4,7 @@ var SessionActions = require('../actions/client_actions/session_actions');
 module.exports = {
   getInitialState: function () {
     return  {
-      currentUser: SessionStore.currentUser(),
-      errors: SessionStore.errors()
+      currentUser: SessionStore.currentUser()
     };
   },
 

@@ -8,6 +8,7 @@ var Modal = require("react-modal");
 var ModalStyle = require("../constants/LoginModalConstant");
 var Dropdown = require("./loginDropdown");
 var UserConstants = require("../constants/user_constants");
+var Errors = require('./shared/errors');
 
 module.exports = React.createClass({
   mixins: [LinkedStateMixin, CurrentUserStateMixin],
@@ -20,25 +21,37 @@ module.exports = React.createClass({
 
   getInitialState: function () {
     return {form: 'login',
-            username: 'username',
-            password: 'password',
+            errors: SessionStore.errors(),
+            username: '',
+            password: '',
             modalOpen: false,
             location: "Pallet Town",
             trainer_type: "water",
             gender: "♂"};
   },
 
+  componentDidMount: function () {
+    this.sessionListener = SessionStore.addListener(this.onChange);
+  },
+
+  componentWillUnmount: function () {
+    this.sessionListener.remove();
+  },
+
+  onChange: function() {
+    this.setState({currentUser: SessionStore.currentUser(), errors: SessionStore.errors()});
+  },
+
   openModal: function () {
-    this.setState({modalOpen: true});
+    this.setState({modalOpen: true, username: '', password: '', errors: []});
   },
 
   closeModal: function (event) {
-    this.setState({modalOpen: false});
-
+    this.setState({modalOpen: false, username: '', password: '', errors: []});
   },
 
   logInModal: function (event) {
-    this.setState({modalOpen: false});
+    this.setState({modalOpen: false, username: '', password: ''});
     this.handleLogIn(event);
   },
 
@@ -84,6 +97,13 @@ module.exports = React.createClass({
 
 
   form: function () {
+      if (this.state.errors !== null){
+        console.log(this.state.errors);
+        if (this.state.errors.length >0) {
+          var allErrors = <Errors errors={this.state.errors}/>;
+          SessionStore.clearErrors();
+        }
+      }
 
       return (
         <div className='splash-page'>
@@ -98,12 +118,15 @@ module.exports = React.createClass({
           </span>
 
           <Modal className="login-modal" isOpen={this.state.modalOpen} style={ModalStyle} onRequestClose={this.closeModal}>
+            {allErrors}
+
             <h2 id="login-modal-header">Log Into Your PokeCupid Account</h2>
+
             <form id="login-form">
-              <label>Username:        <input className="input-text input-modal" type='text' valueLink={this.linkState('username')} autofocus></input>
+              <label>Username:        <input className="input-text input-modal" type='text' placeholder='username' valueLink={this.linkState('username')} autofocus></input>
               </label>
                 <br></br>
-              <label>Password:        <input className="input-text input-modal" type='password' valueLink={this.linkState('password')}></input>
+              <label>Password:        <input className="input-text input-modal" type='password' placeholder='password' valueLink={this.linkState('password')}></input>
               </label>
                 <br></br>
               <div id="login-button-container">
@@ -112,13 +135,13 @@ module.exports = React.createClass({
             </form>
 
           </Modal>
-
+          {allErrors}
         <form className='sign-up-form'>
-          <label>Username:        <input className="input-text" type='text' valueLink={this.linkState('username')}></input>
+          <label>Username:        <input className="input-text" type='text' placeholder="username" valueLink={this.linkState('username')}></input>
           </label>
           <br></br>
 
-          <label>Password:        <input className="input-text" type='password' valueLink={this.linkState('password')}></input>
+          <label>Password:        <input className="input-text" type='password' placeholder="password" valueLink={this.linkState('password')}></input>
           </label>
           <br></br>
           <label>Location:        <Dropdown catKey="location"

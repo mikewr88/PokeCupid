@@ -16,7 +16,7 @@ module.exports = React.createClass({
     return {trainers: []};
   },
   componentWillMount: function () {
-    SessionStore.addListener(this.redirect);
+    this.sessionListener = SessionStore.addListener(this.redirect);
   },
 
   componentDidMount: function () {
@@ -30,6 +30,7 @@ module.exports = React.createClass({
 
   componentWillUnmount: function () {
     this.trainerListener.remove();
+    this.sessionListener.remove();
   },
 
   handleLogOut: function (event) {

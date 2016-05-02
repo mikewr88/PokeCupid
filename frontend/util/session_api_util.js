@@ -9,7 +9,6 @@ module.exports = {
       method: 'GET',
       success:  function (user) {
         SessionServerActions.logIn(user);
-
       }
     });
   },
@@ -23,6 +22,10 @@ module.exports = {
       success: function (user) {
         SessionServerActions.signUp(user);
         hashHistory.push('/trainer-home');
+      },
+      error: function(errors) {
+
+        SessionServerActions.receiveErrors(errors.responseText);
       }
     });
   },
@@ -35,7 +38,9 @@ module.exports = {
       success: function (user) {
         SessionServerActions.logIn(user);
         hashHistory.push('/trainer-home');
-
+      },
+      error: function(errors) {
+        SessionServerActions.receiveErrors(errors);
       }
     });
   },
@@ -46,7 +51,6 @@ module.exports = {
       url: '/api/session',
       success: function () {
         SessionServerActions.logOut();
-        hashHistory.push('/');
       }
     });
   }

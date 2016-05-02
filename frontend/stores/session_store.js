@@ -4,7 +4,7 @@ var SessionConstants = require('../constants/session_constants');
 
 var SessionStore = new Store(AppDispatcher);
 
-var _currentUser, _authErrors;
+var _currentUser, _authErrors = [];
 
 SessionStore.__onDispatch = function (payload) {
   switch (payload.actionType) {
@@ -43,13 +43,23 @@ SessionStore.logout = function () {
 };
 
 SessionStore.setErrors = function (errors) {
-  _authErrors = errors;
+  if (typeof errors === "object") {
+    _authErrors = errors.message;
+  } else {
+    _authErrors = JSON.parse(errors).message;
+
+  }
+
 };
 
 SessionStore.errors = function () {
-  if (_authErrors){
-    return [].slice.call(_authErrors);
-  }
+  console.log(_authErrors);   // error for login not working
+  
+  return _authErrors;
+};
+
+SessionStore.clearErrors = function () {
+  _authErrors = [];
 };
 
 SessionStore.currentUser = function () {

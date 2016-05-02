@@ -247,3 +247,27 @@
   width: 130px;
   height: 60px;
 }
+
+.auth-errors {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  color: red;
+}
+
+::-webkit-input-placeholder {
+   color: rgba(175, 52, 59, 1);
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: rgba(175, 52, 59, 1);  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: rgba(175, 52, 59, 1);  
+}
+
+:-ms-input-placeholder {
+   color: rgba(175, 52, 59, 1);  
+}

@@ -7,6 +7,11 @@ module.exports = React.createClass({
   },
 
   render: function () {
-    return (<h2>Hi: {this.state.trainer.username}</h2>);
+    return (
+      <div>
+        <h2>Hi: {this.state.trainer.username}</h2>
+        
+      </div>
+    );
   }
 });
