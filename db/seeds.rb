@@ -5,8 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-User.create(username: 'michael',
-            trainer_type: "water",
-            gender: "M",
-            location: "Kanto"
+User.create(username: 'guest',
+            trainer_type: "Normal",
+            gender: "♂",
+            location: "Pallet Town",
+            password: 'password',
+            description: "I love normal type Pokemon. I must say my favorite Pokemon of all time is Zubat because they are very rare",
+            image_url: 'http://i.imgur.com/VOBd1Du.png'
 )

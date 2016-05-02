@@ -91,6 +91,13 @@ module.exports = React.createClass({
     });
   },
 
+  guestLogin: function () {
+    SessionActions.logIn({
+      username: "guest",
+      password: "password"
+    });
+  },
+
   handleSignUp: function (event) {
     event.preventDefault();
     this.setForm(event.target.value);
@@ -124,6 +131,7 @@ module.exports = React.createClass({
               <h1 id='poke'>Poke</h1><h1 id='cupid'>Cupid</h1>
             </div>
             <div id='modal-button-div'>
+              <button id="modal-button" onClick={this.guestLogin} >Log In As Guest</button>
               <button id="modal-button" onClick={this.openModal} value='logIn' >Already Have An Account?</button>
             </div>
           </span>
