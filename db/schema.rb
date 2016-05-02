@@ -39,14 +39,14 @@ ActiveRecord::Schema.define(version: 20160501210241) do
     t.datetime "updated_at",      null: false
   end
 
-  create_table "visitors", force: :cascade do |t|
+  create_table "visits", force: :cascade do |t|
     t.integer  "visitor_id", null: false
     t.integer  "visitee_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_index "visitors", ["visitee_id"], name: "index_visitors_on_visitee_id", using: :btree
-  add_index "visitors", ["visitor_id"], name: "index_visitors_on_visitor_id", using: :btree
+  add_index "visits", ["visitee_id"], name: "index_visits_on_visitee_id", using: :btree
+  add_index "visits", ["visitor_id"], name: "index_visits_on_visitor_id", using: :btree
 
 end

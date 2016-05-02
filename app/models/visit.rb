@@ -1,4 +1,4 @@
-class Visitor < ActiveRecord::Base
+class Visit < ActiveRecord::Base
   belongs_to :visitor,
   foreign_key: :visitor_id,
   class_name: 'User'

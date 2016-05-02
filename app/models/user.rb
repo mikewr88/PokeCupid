@@ -14,15 +14,20 @@ class User < ActiveRecord::Base
   foreign_key: :likee_id,
   class_name: 'Like'
 
-  has_many :visitors,
+  has_many :visits,
   foreign_key: :visitor_id,
-  class_name: 'Visitor'
+  class_name: 'Visit'
+
+  has_many :visitors,
+  through: :visits,
+  source: :visitor
+
 
   has_many :visitees,
-  foreign_key: :visitee_id,
-  class_name: 'Visitor'
+  through: :visits,
+  source: :visitee
 
-  
+
 	after_initialize :ensure_session_token
 	before_validation :ensure_session_token_uniqueness
 
