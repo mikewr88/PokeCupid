@@ -24,11 +24,15 @@ module.exports = React.createClass({
     }
     return (
       <li className='trainer-index-item' onClick={this.trainerShow}>
-        <img src={imgUrl} className='logo-test'></img>
+        <div id="index-image-container">
+          <img src={imgUrl} className='index-image'></img>
+        </div>
         <br></br>
-        <p>{this.props.trainer.username}</p>
-        <br></br>
-        <p>{this.props.trainer.trainer_type}</p>
+        <div id="index-item-info">
+          <p>{this.props.trainer.username}</p>
+          <br></br>
+          <p>Trainer Type:{this.props.trainer.trainer_type}</p>
+        </div>
       </li>
     );
   }

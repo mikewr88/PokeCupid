@@ -25,6 +25,11 @@
    font-style:normal;
  }
 
+
+ #root {
+   height: 100%;
+ }
+
  li {
    list-style: none;
  }
@@ -38,7 +43,7 @@
 
  body {
    font-family: 'Martel Sans', sans-serif;
-
+   height: 100%;
   //  background-image: url(http://i.imgur.com/Vo613Lb.jpg);
   //  background-repeat: no-repeat;
   //  background-size: cover;
@@ -53,62 +58,77 @@
 
  .Water {
    background-color: rgb(103, 151, 234);
+   height: 100%;
  }
 
  .Grass {
    background-color: rgb(137, 192, 94);
+   height: 100%;
  }
 
  .Fire{
    background-color: rgb(231, 133, 64);
+   height: 100%;
  }
 
  .Normal {
    background-color: rgb(169, 166, 124);
+   height: 100%;
  }
 
  .Fighting {
    background-color: rgb(182, 66, 47);
+   height: 100%;
  }
 
  .Flying {
    background-color: rgb(162, 153, 235);
+   height: 100%;
  }
 
  .Poison {
    background-color: rgb(151, 82, 157);
+   height: 100%;
  }
 
  .Ground {
    background-color: rgb(222, 190, 115);
+   height: 100%;
  }
 
  .Rock {
    background-color: rgb(183, 157, 72);
+   height: 100%;
  }
 
  .Bug {
    background-color: rgb(173, 178, 61);
+   height: 100%;
  }
 
  .Ghost {
    background-color: rgb(108, 95, 148);
+   height: 100%;
  }
 
  .Electric {
    background-color: rgb(246, 205, 79);
+   height: 100%;
  }
 
  .Psychic {
    background-color: rgb(236, 108, 137);
+   height: 100%;
  }
 
  .Ice {
    background-color: rgb(161, 214, 215);
+   height: 100%;
  }
 
  .Dragon {
    background-color: rgb(97, 90, 240);
+   height: 100%;
  }
 
  .splash-page {
@@ -150,15 +170,63 @@
   clip: rect(10px, 100px, 100px, 10px);
 }
 
-.logo-test {
-  height: 150px;
+.index-image {
+  width: 100% !important;
+  height: auto !important;
+
+}
+
+#index-image-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 250px;
   width: 150px;
+}
+
+#index-item-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+}
+
+.trainer-show-img {
+  width: 100% !important;
+  height: auto !important;
+}
+
+#show-img-container {
+  display: flex;
+  align-items: center;
+  width: 250px;
+}
+
+#show-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#show-info {
+  display: flex;
+  flex-direction: row;
+  background: white;
 }
 
 .trainer-index-item {
   background: white;
+  width: 300px;
+  padding: 3px;
+  margin: 5px;
   border-bottom: 3px gray;
   border-right: 3px gray;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .sign-up-form {
@@ -261,9 +329,9 @@
 #modal-button-div {
   display: flex;
   // flex-direction: row-reverse;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  // width: 90%;
+  width: 50%;
   // height: 90%;
 }
 
@@ -326,7 +394,10 @@
 }
 
 .upload-button {
-  height: 110px;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  padding: 3px;
 }
 
 ::-webkit-input-placeholder {
