@@ -30,7 +30,7 @@ SessionStore.__onDispatch = function (payload) {
 
 SessionStore.login = function (user) {
   _currentUser = user;
-  _authErrors = null;
+  _authErrors = [];
 };
 
 SessionStore.signUp = function (user) {
@@ -39,22 +39,17 @@ SessionStore.signUp = function (user) {
 
 SessionStore.logout = function () {
   _currentUser = null;
-  _authErrors = null;
+  _authErrors = [];
 };
 
 SessionStore.setErrors = function (errors) {
-  if (typeof errors === "object") {
-    _authErrors = errors.message;
-  } else {
-    _authErrors = JSON.parse(errors).message;
-
-  }
+  _authErrors = JSON.parse(errors).message;
 
 };
 
 SessionStore.errors = function () {
   console.log(_authErrors);   // error for login not working
-  
+
   return _authErrors;
 };
 

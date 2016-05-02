@@ -6,7 +6,23 @@ class User < ActiveRecord::Base
 	validates :username, uniqueness: true
 	validates :password, length: {minimum: 6}, allow_nil: :true
 
+  has_many :likers,
+  foreign_key: :liker_id,
+  class_name: 'Like'
 
+  has_many :likees,
+  foreign_key: :likee_id,
+  class_name: 'Like'
+
+  has_many :visitors,
+  foreign_key: :visitor_id,
+  class_name: 'Visitor'
+
+  has_many :visitees,
+  foreign_key: :visitee_id,
+  class_name: 'Visitor'
+
+  
 	after_initialize :ensure_session_token
 	before_validation :ensure_session_token_uniqueness
 

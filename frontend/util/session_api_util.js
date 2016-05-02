@@ -18,7 +18,13 @@ module.exports = {
       method: 'POST',
       url: '/api/user',
       dataType: 'json',
-      data: {user: {username: data.username, password: data.password, gender: data.gender, location: data.location, trainer_type: data.trainer_type}},
+      data: {user: {username: data.username,
+                    password: data.password,
+                    gender: data.gender,
+                    location: data.location,
+                    trainer_type: data.trainer_type,
+                    image_url: data.image_url
+                  }},
       success: function (user) {
         SessionServerActions.signUp(user);
         hashHistory.push('/trainer-home');
@@ -34,13 +40,14 @@ module.exports = {
     $.ajax({
       method: "POST",
       url: '/api/session',
+      dataType: 'json',
       data: {user: {username: data.username, password: data.password}},
       success: function (user) {
         SessionServerActions.logIn(user);
         hashHistory.push('/trainer-home');
       },
       error: function(errors) {
-        SessionServerActions.receiveErrors(errors);
+        SessionServerActions.receiveErrors(errors.responseText);
       }
     });
   },

@@ -17,8 +17,12 @@ var React = require('react'),
     mixins: [CurrentUserStateMixin],
 
     render: function () {
+      var trainerClass = 'basic';
+      if (this.state.currentUser) {
+        trainerClass = this.state.currentUser.trainer_type;
+      }
       return (
-        <div>
+        <div className={trainerClass}>
           {this.props.children}
         </div>
       );

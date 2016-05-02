@@ -38,12 +38,77 @@
 
  body {
    font-family: 'Martel Sans', sans-serif;
-   background-color: rgb(175, 52, 59);
+
   //  background-image: url(http://i.imgur.com/Vo613Lb.jpg);
   //  background-repeat: no-repeat;
   //  background-size: cover;
   //  background-position: center;
    margin: 0px;
+ }
+
+ .basic {
+   background-color: rgb(175, 52, 59);
+
+ }
+
+ .Water {
+   background-color: rgb(103, 151, 234);
+ }
+
+ .Grass {
+   background-color: rgb(137, 192, 94);
+ }
+
+ .Fire{
+   background-color: rgb(231, 133, 64);
+ }
+
+ .Normal {
+   background-color: rgb(169, 166, 124);
+ }
+
+ .Fighting {
+   background-color: rgb(182, 66, 47);
+ }
+
+ .Flying {
+   background-color: rgb(162, 153, 235);
+ }
+
+ .Poison {
+   background-color: rgb(151, 82, 157);
+ }
+
+ .Ground {
+   background-color: rgb(222, 190, 115);
+ }
+
+ .Rock {
+   background-color: rgb(183, 157, 72);
+ }
+
+ .Bug {
+   background-color: rgb(173, 178, 61);
+ }
+
+ .Ghost {
+   background-color: rgb(108, 95, 148);
+ }
+
+ .Electric {
+   background-color: rgb(246, 205, 79);
+ }
+
+ .Psychic {
+   background-color: rgb(236, 108, 137);
+ }
+
+ .Ice {
+   background-color: rgb(161, 214, 215);
+ }
+
+ .Dragon {
+   background-color: rgb(97, 90, 240);
  }
 
  .splash-page {
@@ -261,13 +326,13 @@
 }
 
 :-moz-placeholder { /* Firefox 18- */
-   color: rgba(175, 52, 59, 1);  
+   color: rgba(175, 52, 59, 1);
 }
 
 ::-moz-placeholder {  /* Firefox 19+ */
-   color: rgba(175, 52, 59, 1);  
+   color: rgba(175, 52, 59, 1);
 }
 
 :-ms-input-placeholder {
-   color: rgba(175, 52, 59, 1);  
+   color: rgba(175, 52, 59, 1);
 }

@@ -9,6 +9,7 @@ var ModalStyle = require("../constants/LoginModalConstant");
 var Dropdown = require("./loginDropdown");
 var UserConstants = require("../constants/user_constants");
 var Errors = require('./shared/errors');
+var Upload = require('./shared/ImageUpload');
 
 module.exports = React.createClass({
   mixins: [LinkedStateMixin, CurrentUserStateMixin],
@@ -26,8 +27,10 @@ module.exports = React.createClass({
             password: '',
             modalOpen: false,
             location: "Pallet Town",
-            trainer_type: "water",
-            gender: "♂"};
+            trainer_type: "Water",
+            gender: "♂",
+            image_url: null
+          };
   },
 
   componentDidMount: function () {
@@ -51,6 +54,7 @@ module.exports = React.createClass({
   },
 
   logInModal: function (event) {
+
     this.setState({modalOpen: false, username: '', password: ''});
     this.handleLogIn(event);
   },
@@ -74,6 +78,10 @@ module.exports = React.createClass({
     this.setState({gender: event.target.value});
   },
 
+  handleImage: function (image_url) {
+    this.setState({image_url: image_url});
+  },
+
   handleLogIn: function (event) {
     event.preventDefault();
     this.setForm(event.target.value);
@@ -86,24 +94,27 @@ module.exports = React.createClass({
   handleSignUp: function (event) {
     event.preventDefault();
     this.setForm(event.target.value);
+
     SessionActions.signUp({
         username: this.state.username,
         password: this.state.password,
         gender: this.state.gender,
         location: this.state.location,
-        trainer_type: this.state.trainer_type
+        trainer_type: this.state.trainer_type,
+        image_url: this.state.image_url
     });
   },
 
 
   form: function () {
-      if (this.state.errors !== null){
-        console.log(this.state.errors);
-        if (this.state.errors.length >0) {
-          var allErrors = <Errors errors={this.state.errors}/>;
-          SessionStore.clearErrors();
-        }
+
+
+      console.log(this.state.errors);
+      if (this.state.errors.length >0) {
+        var allErrors = <Errors errors={this.state.errors}/>;
+        SessionStore.clearErrors();
       }
+
 
       return (
         <div className='splash-page'>
@@ -163,6 +174,8 @@ module.exports = React.createClass({
           </label>
 
           <br></br>
+
+          <Upload setImage={this.handleImage} />
           <div id="sign-up-bt-div">
             <button id='auth-button' onClick={this.handleSignUp} value='signUp' >Sign Up!</button>
           </div>

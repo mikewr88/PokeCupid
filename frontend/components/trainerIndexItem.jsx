@@ -15,7 +15,13 @@ module.exports = React.createClass({
   },
 
   render: function () {
-    var imgUrl ='http://i.imgur.com/wOIqRXY.jpg';
+    var imgUrl;
+    if (this.props.trainer.image_url) {
+      imgUrl = this.props.trainer.image_url;
+    } else {
+      imgUrl ='http://i.imgur.com/wOIqRXY.jpg';
+
+    }
     return (
       <li className='trainer-index-item' onClick={this.trainerShow}>
         <img src={imgUrl} className='logo-test'></img>
