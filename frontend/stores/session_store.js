@@ -48,8 +48,6 @@ SessionStore.setErrors = function (errors) {
 };
 
 SessionStore.errors = function () {
-  console.log(_authErrors);   // error for login not working
-
   return _authErrors;
 };
 

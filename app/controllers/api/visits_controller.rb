@@ -23,7 +23,6 @@ class Api::VisitsController < ApplicationController
   end
 
   def index
-    
     @visitor = current_user
     render 'api/visits/index'
   end

@@ -1,4 +1,6 @@
 class Like < ActiveRecord::Base
+  validates :liker_id, uniqueness: {scope: :likee_id}
+
   belongs_to :liker,
   foreign_key: :liker_id,
   class_name: 'User'

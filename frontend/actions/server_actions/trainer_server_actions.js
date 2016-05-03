@@ -1,6 +1,7 @@
 var AppDispatcher = require('../../dispatcher/dispatcher');
 var TrainerConstants = require('../../constants/trainer_constants');
 var VisitConstants = require('../../constants/visit_constants');
+var LikeConstants = require('../../constants/like_constants');
 
 module.exports = {
   receiveAllTrainers: function (trainers) {
@@ -29,6 +30,20 @@ module.exports = {
     AppDispatcher.dispatch({
       actionType: VisitConstants.VISITORS_RECEIVED,
       visitors: visitors
+    });
+  },
+
+  receiveLike: function (like) {
+    AppDispatcher.dispatch({
+      actionType: LikeConstants.LIKE_RECEIVED,
+      like: like
+    });
+  },
+
+  receiveLikers: function (likers) {
+    AppDispatcher.dispatch({
+      actionType: LikeConstants.LIKERS_RECEIVED,
+      likers: likers
     });
   }
 };

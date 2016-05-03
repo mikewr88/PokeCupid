@@ -20,7 +20,7 @@ VisitStore.__onDispatch = function (payload) {
 
 
 VisitStore.updateVisits = function (visitors) {
-  console.log(visitors);
+  
   // _visitors = visitors;
 };
 

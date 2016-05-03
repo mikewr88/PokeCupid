@@ -1,0 +1,4 @@
+module.exports = {
+  LIKERS_RECEIVED: "LIKERS_RECEIVED",
+  LIKE_RECEIVED: "LIKE_RECEIVED"
+};

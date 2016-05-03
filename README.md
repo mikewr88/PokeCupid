@@ -26,7 +26,7 @@ PokeCupid will allow users to do the following:
 - [ ] Create and remove a Pokemon from your profile (MVP)
 - [ ] Search for other users (MVP)
 - [ ] Like, view, and communicate with other users (the latter being non-MVP)
-- [ ] See who has viewed your profile (non-MVP)
+- [ ] See who has viewed your profile (MVP)
 - [ ] Ability to Filter Users by certain criteria (MVP)
 - [ ] Quickmatch that recommends a user based on profile data (non-MVP)
 
@@ -45,53 +45,73 @@ PokeCupid will allow users to do the following:
 
 ## Implementation Timeline
 
-### Phase 1: Backend setup and User Authentication (1.5 days)
+### Phase 1: Backend setup and User Authentication (2 days)
 
 **Objective:** Functioning rails project with Authentication
 
-- [ ] create new project
-- [ ] create `User` model
-- [ ] authentication
-- [ ] user signup/signin pages
-- [ ] blank landing page after signin
+- [x] create new project
+- [x] create `User` model
+- [x] authentication
+- [x] user signup/signin pages
+- [x] blank landing page after signin
 
-### Phase 2: Trainer Model, API, and basic APIUtil (2 days)
+### Phase 2: Trainer Model, API, and basic APIUtil (2.5 days)
 
-**Objective:** Pokemon can be created, viewed, destroyed through
-the API.
+**Objective:** Trainers can be viewed created and searched
 
-- [ ] jBuilder views for Users
-- [ ] setup Webpack & Flux scaffold
-- [ ] setup `APIUtil` to interact with the API
-- [ ] test out API interaction in the console.
-- [ ] setup the flux loop with skeleton files
-- [ ] setup React Router
+- [x] jBuilder views for Users
+- [x] setup Webpack & Flux scaffold
+- [x] setup `APIUtil` to interact with the API
+- [x] test out API interaction in the console.
+- [x] setup the flux loop with skeleton files
+- [x] setup React Router
 - implement each Trainer component, building out the flux loop as needed.
-  - [ ] `TrainerIndex`
-  - [ ] `TrainerIndexItem`
-  - [ ] `SearchIndex`
-  - [ ] `VisitedIndex`
-  - [ ] `TrainerDetail`
+  - [x] `TrainerHome`
+  - [x] `TrainerIndexItem`
+  - [ ] `SearchBar`
+  - [x] `Visitors`
+  - [x] `TrainerShow`
+  - [x] `Likes`
 
-### Phase 3: Flux Architecture and Router and NavBar (2.5 days)
+### Phase 3: Likes and Visitors (1 day)
 
-**Objective:** Able to view pages for Trainers and Pokemon. Links to other pages work. NavBar will allow links
+**Objective:** Visitors belong to Users. Users can like other users, that user can see who liked them. seeding
+
+- [x] create `Likes` and `Visitors` model
+- build out API, Flux loop, and components for:
+  - [x] Likes and Visitors CRUD
+  - [ ] Liking a user or visiting a user's page notifies that user
+  - [x] Visitor Index shows visitors to your profile
+  - [x] Likes Index Page
+- [ ] seed the database with a small amount of test data
+
+
+### Phase 4: NavBar and Styling (2.5 days)
+
+**Objective:** Able to view pages for Trainers. Links to other pages work. NavBar will allow links
 to other pages as well
 
 - [ ] create NavBar
 - [ ] create a basic style guide
 - [ ] position elements on the page
 - [ ] add basic colors & styles
-- [ ] add either video or slideshow to root splash page
 - [ ] make notification bubbles for visited and likes
 
-### Phase 4: Pokemon and Start Styling (1.5 days)
+### Phase 5: Styling Cleanup and fixing up (1.5 days)
+
+**objective:** Make the site feel more cohesive and clean.
+
+- [ ] Get feedback on my UI from others
+- [ ] Refactor HTML classes & CSS rules
+- [ ] Add transitions and other styling flourishes.
+
+
+### Phase 6: Pokemon (1.5 days)
 
 **Objective:** Existing pages (including singup/signin) will look good. Pokemon can be created, viewed, destroyed through
 the API.
 
 - [ ] create `Pokemon` model
-- [ ] seed the database with a small amount of test data
 - [ ] CRUD API for Pokemon (`PokemonsController`)
 - [ ] jBuilder views for Pokemon
 - implement each Pokemon component, building out the flux loop as needed.
@@ -101,27 +121,9 @@ the API.
 - [ ] can search for a user and screen will populate with matches to search string
 - [ ] can create and remove Pokemon for your profile
 
-### Phase 5: Likes and Visitors (1.5 days)
-
-**Objective:** Visitors belong to Users. Users can like other users, that user can see who liked them
-
-- [ ] create `Likes` and `Visitors` model
-- build out API, Flux loop, and components for:
-  - [ ] Likes and Visitors CRUD
-  - [ ] Liking a user or visiting a user's page notifies that user
-  - [ ] Visitor Index as well as dropdown menu for Visitors in NavBar
-  - [ ] Dropdown for Likes and LikesIndex Page
-- Use CSS to style new views
-
-### Phase 6: Styling Cleanup and Seeding (1 day)
-
-**objective:** Make the site feel more cohesive and clean.
-
-- [ ] Get feedback on my UI from others
-- [ ] Refactor HTML classes & CSS rules
-- [ ] Add modals, transitions, and other styling flourishes.
 
 ### Bonus Features (TBD)
+- [ ] dropdown menu for Visitors/Likes in NavBar
 - [ ] Pagination / infinite scroll for TrainerIndex
 - [ ] Add chat between users
 - [ ] Add music to the site that plays, maybe changes when you navigate to different page

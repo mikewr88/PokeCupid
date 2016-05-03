@@ -4,28 +4,33 @@ class User < ActiveRecord::Base
 
 	validates :username, :password_digest, :session_token, presence: true
 	validates :username, uniqueness: true
+  validates :username, uniqueness: {case_sensitive: true}
 	validates :password, length: {minimum: 6}, allow_nil: :true
 
-  has_many :likers,
-  foreign_key: :liker_id,
-  class_name: 'Like'
+  has_many :likes,
+    foreign_key: :liker_id,
+    class_name: 'Like'
 
   has_many :likees,
-  foreign_key: :likee_id,
-  class_name: 'Like'
+    through: :likes,
+    source: :likee
+
+  has_many :likers,
+    through: :likes,
+    source: :liker
 
   has_many :visits,
-  foreign_key: :visitor_id,
-  class_name: 'Visit'
+    foreign_key: :visitor_id,
+    class_name: 'Visit'
 
   has_many :visitors,
-  through: :visits,
-  source: :visitor
+    through: :visits,
+    source: :visitor
 
 
   has_many :visitees,
-  through: :visits,
-  source: :visitee
+    through: :visits,
+    source: :visitee
 
 
 	after_initialize :ensure_session_token

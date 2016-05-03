@@ -15,6 +15,7 @@ module.exports = {
       SessionActions.fetchCurrentUser();
     }else {
       TrainerActions.fetchVisitors();
+      TrainerActions.fetchLikers();
     }
   },
 

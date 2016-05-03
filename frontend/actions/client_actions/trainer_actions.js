@@ -11,6 +11,13 @@ module.exports = {
 
   fetchVisitors: function () {
     TrainerApiUtil.fetchVisitors();
+  },
 
+  createLike: function (liker_id, likee_id) {
+    TrainerApiUtil.createLike(liker_id, likee_id);
+  },
+
+  fetchLikers: function () {
+    TrainerApiUtil.fetchLikers();
   }
 };

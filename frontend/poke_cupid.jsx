@@ -3,6 +3,8 @@ var React = require('react'),
     LoginForm = require('./components/loginForm'),
     TrainerHome = require('./components/trainerHome'),
     TrainerShow = require('./components/trainerShow'),
+    Visitors = require('./components/visitors'),
+    Likes = require('./components/likers'),
     Router = require('react-router').Router,
     Route = require('react-router').Route,
     IndexRoute = require('react-router').IndexRoute,
@@ -15,7 +17,7 @@ var React = require('react'),
 
   var App = React.createClass({
     mixins: [CurrentUserStateMixin],
-    
+
 
     render: function () {
       var trainerClass = 'basic';
@@ -35,6 +37,8 @@ var React = require('react'),
       <IndexRoute component={LoginForm}/>
       <Route path='trainer-home' component={TrainerHome}/>
       <Route path='trainer/:trainerId' component={TrainerShow}/>
+      <Route path='visitors' component={Visitors}/>
+      <Route path='likes' component={Likes}/>
     </Route>
   );
 

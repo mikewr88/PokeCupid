@@ -115,8 +115,6 @@ module.exports = React.createClass({
 
   form: function () {
 
-
-      console.log(this.state.errors);
       if (this.state.errors.length >0) {
         var allErrors = <Errors errors={this.state.errors}/>;
         SessionStore.clearErrors();

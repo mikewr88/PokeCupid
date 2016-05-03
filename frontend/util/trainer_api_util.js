@@ -38,9 +38,31 @@ module.exports = {
     $.ajax({
       method: 'GET',
       url: 'api/visits',
-      success: function (visitors) {
-        TrainerServerActions.receiveVisitors(visitors);
+      success: function (data) {
+        TrainerServerActions.receiveVisitors(data.visitors);
+      }
+    });
+  },
+
+  createLike: function (liker_id, likee_id) {
+    $.ajax({
+      method: 'POST',
+      url: 'api/likes',
+      data: {like: {liker_id: liker_id, likee_id: likee_id}},
+      success: function (like) {
+        TrainerServerActions.receiveLike(like);
+      }
+    });
+  },
+
+  fetchLikers: function () {
+    $.ajax({
+      method: 'GET',
+      url: 'api/likes',
+      success: function (data) {
+        TrainerServerActions.receiveLikers(data.likers);
       }
     });
   }
+
 };

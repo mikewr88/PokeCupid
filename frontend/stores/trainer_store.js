@@ -20,7 +20,6 @@ TrainerStore.__onDispatch = function (payload) {
 };
 
 TrainerStore.getTrainers = function (trainers) {
-  console.log(trainers);
   _trainers = {};
   trainers.forEach(function (trainer) {
     _trainers[trainer.id] = trainer;
