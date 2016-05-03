@@ -16,11 +16,11 @@
 
 
  @font-face {
-   font-family:"Pokemon Pixel Font Regular";
-   src: url("pokemon_pixel_font.eot?") format("eot"),
-        url("pokemon_pixel_font.woff") format("woff"),
-        url("../../fonts/pokemon_pixel_font.ttf") format("truetype"),
-        url("pokemon_pixel_font.svg#Pokemon-Pixel-Font") format("svg");
+   font-family: "Pokemon Pixel Font Regular";
+   src: asset-url("pokemon_pixel_font.eot?") format("eot"),
+        asset-url("pokemon_pixel_font.woff") format("woff"),
+        asset-url("../../fonts/pokemon_pixel_font.ttf") format("truetype"),
+        asset-url("pokemon_pixel_font.svg#Pokemon-Pixel-Font") format("svg");
    font-weight:normal;
    font-style:normal;
  }
@@ -331,7 +331,7 @@
   // flex-direction: row-reverse;
   justify-content: space-between;
   align-items: center;
-  width: 50%;
+  width: 40%;
   // height: 90%;
 }
 
