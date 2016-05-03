@@ -15,6 +15,7 @@ var React = require('react'),
 
   var App = React.createClass({
     mixins: [CurrentUserStateMixin],
+    
 
     render: function () {
       var trainerClass = 'basic';

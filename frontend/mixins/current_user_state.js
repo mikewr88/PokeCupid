@@ -1,5 +1,6 @@
 var SessionStore = require('../stores/session_store');
 var SessionActions = require('../actions/client_actions/session_actions');
+var TrainerActions = require('../actions/client_actions/trainer_actions');
 
 module.exports = {
   getInitialState: function () {
@@ -12,6 +13,8 @@ module.exports = {
     SessionStore.addListener(this.updateCurrentUser);
     if (typeof SessionStore.currentUser()=== 'undefined'){
       SessionActions.fetchCurrentUser();
+    }else {
+      TrainerActions.fetchVisitors();
     }
   },
 

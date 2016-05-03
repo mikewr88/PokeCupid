@@ -163,24 +163,29 @@ module.exports = React.createClass({
           <label>Password:        <input className="input-text" type='password' placeholder="password" valueLink={this.linkState('password')}></input>
           </label>
           <br></br>
-          <label>Location:        <Dropdown catKey="location"
-                      value={this.state.location}
-                      category={UserConstants.location}
-                      onChange={this.handleLocationDropdown}></Dropdown>
-          </label>
-          <br></br>
-          <label>Trainer Type:        <Dropdown catKey="trainer_type"
-                      value={this.state.trainer_type}
-                      category={UserConstants.trainer_type}
-                      onChange={this.handleTypeDropdown}></Dropdown>
-          </label>
-          <br></br>
-          <label>Gender:        <Dropdown catKey="gender"
-                      value={this.state.gender}
-                      category={UserConstants.gender}
-                      onChange={this.handleGenderDropdown}></Dropdown>
-          </label>
+          <div>
+            <label>I am a    <Dropdown catKey="gender"
+                        value={this.state.gender}
+                        category={UserConstants.gender}
+                        onChange={this.handleGenderDropdown}></Dropdown>
+            </label>
 
+            <label>   trainer of type    <Dropdown catKey="trainer_type"
+                        value={this.state.trainer_type}
+                        category={UserConstants.trainer_type}
+                        onChange={this.handleTypeDropdown}></Dropdown>
+            </label>
+
+            <label>    from    <Dropdown catKey="location"
+                        value={this.state.location}
+                        category={UserConstants.location}
+                        onChange={this.handleLocationDropdown}></Dropdown>
+            </label>
+
+
+
+
+          </div>
           <br></br>
 
           <Upload setImage={this.handleImage} />

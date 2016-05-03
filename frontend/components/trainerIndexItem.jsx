@@ -11,6 +11,8 @@ var TrainerHome = require('./trainerHome');
 module.exports = React.createClass({
   trainerShow: function () {
     var trainerId = this.props.trainer.id;
+    console.log(SessionStore.currentUser());
+    TrainerActions.createVisit(SessionStore.currentUser().id, trainerId);
     hashHistory.push("trainer/" + trainerId);
   },
 

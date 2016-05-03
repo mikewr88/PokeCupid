@@ -1,6 +1,7 @@
 var React = require('react');
 var TrainerStore = require('../stores/trainer_store');
 var hashHistory = require('react-router').hashHistory;
+var VisitorStore = require('../stores/visit_store');
 
 module.exports = React.createClass({
   getInitialState: function () {
@@ -13,6 +14,7 @@ module.exports = React.createClass({
   },
 
   render: function () {
+    console.log(VisitorStore.allVisitors());
     return (
       <div id="show-page">
         <button id="back-button" onClick={this.handleBack}>Back to Trainers</button>
