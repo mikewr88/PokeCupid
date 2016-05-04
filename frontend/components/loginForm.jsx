@@ -31,6 +31,7 @@ module.exports = React.createClass({
             location: "Pallet Town",
             trainer_type: "Water",
             gender: "♂",
+            description: '',
             image_url: null
           };
   },
@@ -110,7 +111,8 @@ module.exports = React.createClass({
         gender: this.state.gender,
         location: this.state.location,
         trainer_type: this.state.trainer_type,
-        image_url: this.state.image_url
+        image_url: this.state.image_url,
+        description: this.state.description
     });
   },
 
@@ -139,19 +141,20 @@ module.exports = React.createClass({
           <Modal className="login-modal" isOpen={this.state.modalOpen} style={ModalStyle} onRequestClose={this.closeModal}>
             {allErrors}
 
-            <h2 id="login-modal-header">Log Into Your PokeCupid Account</h2>
+
 
             <form id="login-form">
 
-              <label id='username'>Username:        <input className="input-text input-modal username" type='text' placeholder='username' valueLink={this.linkState('username')} autofocus></input>
-              </label>
-                <br></br>
-              <label id='password'>Password:        <input className="input-text input-modal password" type='password' placeholder='password' valueLink={this.linkState('password')}></input>
+              <label id='username'>Username:        <input className="input-text input-modal username" type='text' valueLink={this.linkState('username')} autofocus></input>
               </label>
                 <br></br>
               <div id="login-button-container">
                 <button id='auth-button' className='login-button' onClick={this.logInModal} value="Log In">Log In!</button>
               </div>
+                <br></br>
+              <label id='password'>Password:        <input className="input-text input-modal password" type='password' valueLink={this.linkState('password')}></input>
+              </label>
+
             </form>
 
           </Modal>
@@ -161,11 +164,11 @@ module.exports = React.createClass({
         <form className='sign-up-form'>
           <div id="tagline">Tired of Trying to Catch Em All? Join PokeCupid Today!</div>
           <br></br>
-          <label>Username:        <input className="input-text" type='text' placeholder="username" valueLink={this.linkState('username')}></input>
+          <label>Enter a Username:       <input className="input-text" type='text' valueLink={this.linkState('username')}></input>
           </label>
           <br></br>
 
-          <label>Password:        <input className="input-text" type='password' placeholder="password" valueLink={this.linkState('password')}></input>
+          <label>Enter a Password:        <input className="input-text" type='password' valueLink={this.linkState('password')}></input>
           </label>
           <br></br>
           <div>
@@ -187,10 +190,13 @@ module.exports = React.createClass({
                         onChange={this.handleLocationDropdown}></Dropdown>
             </label>
 
-
-
-
           </div>
+          <br></br>
+
+
+            <textarea rows='4' cols='50' placeholder='Add a description' className='description' valueLink={this.linkState('description')}></textarea>
+
+
           <br></br>
 
           <Upload setImage={this.handleImage} />

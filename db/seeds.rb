@@ -95,18 +95,18 @@ User.create(username: 'gary',
             image_url: 'http://i.imgur.com/VOBd1Du.png'
 )
 
-# 50.times do
-#   a = rand(1..10)
-#   b = rand(1..10)
-#   if a != b
-#     Visit.create(
-#       visitor_id: a,
-#       visitee_id: b
-#     )
-#
-#     Like.create(
-#       liker_id: b,
-#       likee_id: a
-#     )
-#   end
-# end
+50.times do
+  a = rand(1..10)
+  b = rand(1..10)
+  if a != b
+    Visit.create(
+      visitor_id: a,
+      visitee_id: b
+    )
+
+    Like.create(
+      liker_id: b,
+      likee_id: a
+    )
+  end
+end

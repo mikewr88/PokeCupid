@@ -25,6 +25,10 @@
    font-style:normal;
  }
 
+ *:focus {
+   outline: none;
+ }
+
 
  #root {
    height: 100%;
@@ -44,8 +48,8 @@
    align-self: flex-end;
    display: flex;
    justify-content: space-around;
-   height: 50px;
-   width: 40%;
+   height: 45px;
+   width: 30%;
  }
 
  .nav-button {
@@ -190,6 +194,10 @@
 
  }
 
+ #logo-title > #cupid, #poke {
+   font-size: 30px;
+ }
+
 
 #login-button {
   color: white;
@@ -213,6 +221,11 @@
 
 .logo:hover {
   cursor: pointer;
+}
+
+.logo-nav {
+  height: 40px;
+  width: 40px;
 }
 
 .index-image {
@@ -242,10 +255,7 @@
   justify-content: center;
   height: 250px;
   width: 200px;
-  // border-bottom: #bf5e5e solid 2px;
-  -webkit-box-shadow: 0px 10px 6px -3px rgba(191,82,82,1);
-  -moz-box-shadow: 0px 10px 6px -3px rgba(191,82,82,1);
-  box-shadow: 0px 10px 6px -3px rgba(191,82,82,1);
+  border-bottom: #bf5e5e solid 2px;
 }
 
 #index-item-info {
@@ -297,11 +307,12 @@
 .sign-up-form {
   display: flex;
   justify-content: center;
-  height: 550px;
+  height: auto;
   flex-direction: column;
   align-items: center;
   color: white;
   font-size: 20px;
+  padding-bottom: 15px;
   // font-weight: bold;
   // text-shadow: 1px 1px gray;
 }
@@ -317,7 +328,7 @@
 }
 
 .sign-up-dropdown:hover {
-  background: rgb(155, 159, 181);
+  background: rgb(204, 204, 204);
   transition: background 0.3s ease;
 }
 
@@ -344,15 +355,14 @@
   font-family: 'Martel Sans', sans-serif;
   background-color: white;
   color: rgb(175, 52, 59);
-  transition: padding 0.3s ease-out, font 0.3s linear;
+
 
 }
 
 #auth-button:hover {
   cursor: pointer;
-  padding: 15px;
-  font-size: 24px;
-  transition: font 0.3s linear, padding 0.3s ease;
+  background-color: rgb(204, 204, 204);
+  transition: background-color 0.2s linear;
 }
 
 #sign-up-bt-div {
@@ -373,23 +383,24 @@
 }
 
 #logo-title {
+  cursor: pointer;
   display: flex;
+  align-items: center;
+  height: 50px;
 }
 
 #modal-button {
   padding: 5px;
   background-color: rgb(175, 52, 59);
   font-family: 'Martel Sans', sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   color: white;
   height: 50px;
   border: none;
-  transition: padding .3s ease-out;
+
 }
 
 #modal-button:hover {
-  padding: 10px;
-  transition: padding .3s ease;
   cursor: pointer;
 }
 
@@ -412,7 +423,7 @@
     border-radius: 200px 200px 200px 200px;
     -moz-border-radius: 200px 200px 200px 200px;
     -webkit-border-radius: 200px 200px 200px 200px;
-    
+
 }
 
 #login-modal-header {
@@ -424,6 +435,7 @@
 #login-form {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   align-items: center;
   color: rgb(175, 52, 59);
   font-size: 20px;
@@ -435,7 +447,12 @@
 
 #auth-button.login-button {
   color: rgb(153, 0, 0);
-  border: solid 2px rgba(175, 52, 59, 1);
+  border-radius: 200px 200px 200px 200px;
+  -moz-border-radius: 200px 200px 200px 200px;
+  -webkit-border-radius: 200px 200px 200px 200px;
+  border: 5px solid #000000;
+  height: 95px;
+  width: 95px;
   font-family: 'Martel Sans', sans-serif;
 
 }
@@ -477,8 +494,8 @@
 
 
 #login-button-container {
-  width: 130px;
-  height: 60px;
+  width: 95px;
+  height: 95px;
 }
 
 .auth-errors {

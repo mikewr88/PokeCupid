@@ -12,11 +12,17 @@ content : {
     position        : 'fixed',
 
     // background      : "white",
-    top             : '100px',
-    left            : '150px',
-    right           : '150px',
-    bottom          : '150px',
-    border          : '1px solid #ccc',
+    // top             : '100px',
+    // left            : '150px',
+    // right           : '150px',
+    // bottom          : '150px',
+    top             : '50%',
+    left            : '50%',
+    marginTop       : '-182px',
+    marginLeft      : '-182px',
+    height          : '365px',
+    width           : '365px',
+    border          : '1px solid black',
     padding         : '20px',
     zindex         : 11
   }
