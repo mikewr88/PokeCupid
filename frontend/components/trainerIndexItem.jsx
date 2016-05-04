@@ -15,6 +15,11 @@ module.exports = React.createClass({
     hashHistory.push("trainer/" + trainerId);
   },
 
+  createLike: function () {
+    var trainerId = this.props.trainer.id;
+    TrainerActions.createLike(SessionStore.currentUser().id, trainerId);
+  },
+
   render: function () {
     var imgUrl;
     if (this.props.trainer.image_url) {
@@ -24,16 +29,18 @@ module.exports = React.createClass({
 
     }
     return (
-      <li className='trainer-index-item' onClick={this.trainerShow}>
+      <li className='trainer-index-item'>
         <div id="index-image-container">
-          <img src={imgUrl} className='index-image'></img>
+          <img src={imgUrl} className='index-image' onClick={this.trainerShow}></img>
         </div>
+
         <br></br>
         <div id="index-item-info">
           <p>{this.props.trainer.username}</p>
-          <br></br>
-          <p>Trainer Type:{this.props.trainer.trainer_type}</p>
+          <p>From {this.props.trainer.location}</p>
+          <p>{this.props.trainer.trainer_type} Trainer</p>
         </div>
+        <button id="like-button" onClick={this.createLike}>Like</button>
       </li>
     );
   }

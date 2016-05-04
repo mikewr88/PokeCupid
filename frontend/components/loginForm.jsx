@@ -142,10 +142,11 @@ module.exports = React.createClass({
             <h2 id="login-modal-header">Log Into Your PokeCupid Account</h2>
 
             <form id="login-form">
-              <label>Username:        <input className="input-text input-modal" type='text' placeholder='username' valueLink={this.linkState('username')} autofocus></input>
+
+              <label id='username'>Username:        <input className="input-text input-modal username" type='text' placeholder='username' valueLink={this.linkState('username')} autofocus></input>
               </label>
                 <br></br>
-              <label>Password:        <input className="input-text input-modal" type='password' placeholder='password' valueLink={this.linkState('password')}></input>
+              <label id='password'>Password:        <input className="input-text input-modal password" type='password' placeholder='password' valueLink={this.linkState('password')}></input>
               </label>
                 <br></br>
               <div id="login-button-container">
@@ -154,8 +155,12 @@ module.exports = React.createClass({
             </form>
 
           </Modal>
+
+
           {allErrors}
         <form className='sign-up-form'>
+          <div id="tagline">Tired of Trying to Catch Em All? Join PokeCupid Today!</div>
+          <br></br>
           <label>Username:        <input className="input-text" type='text' placeholder="username" valueLink={this.linkState('username')}></input>
           </label>
           <br></br>

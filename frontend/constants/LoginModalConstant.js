@@ -11,7 +11,7 @@ var CONTENT_STYLE = {
 content : {
     position        : 'fixed',
 
-    background      : "white",
+    // background      : "white",
     top             : '100px',
     left            : '150px',
     right           : '150px',
@@ -21,5 +21,7 @@ content : {
     zindex         : 11
   }
 };
+
+
 
 module.exports = CONTENT_STYLE;

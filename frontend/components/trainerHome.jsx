@@ -78,7 +78,7 @@ module.exports = React.createClass({
     });
       return (
         <div>
-        
+          <div id="trainer-home-header">Browse Trainers</div>
           <ul className='trainer-home-ul'>
             {array}
           </ul>
