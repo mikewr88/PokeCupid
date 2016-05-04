@@ -23,9 +23,9 @@ module.exports = React.createClass({
       thumbnail = (<img id='thumbnail' src={this.state.thumbnail}></img>);
     }
     return (
-      <div className="upload-button">
+      <div className="upload-button-container">
         {thumbnail}
-        <button onClick={this.upload}>Upload a Photo!</button>
+        <button id="upload-button" onClick={this.upload}>Upload a Photo!</button>
       </div>
     );
   }

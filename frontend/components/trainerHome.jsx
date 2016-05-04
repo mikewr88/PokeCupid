@@ -78,10 +78,7 @@ module.exports = React.createClass({
     });
       return (
         <div>
-          <button onClick={this.handleLogOut}>Log Out</button>
-          <button onClick={this.goToVisitors}>Visitors</button>
-          <button onClick={this.goToLikes}>Likes</button>
-
+        
           <ul className='trainer-home-ul'>
             {array}
           </ul>

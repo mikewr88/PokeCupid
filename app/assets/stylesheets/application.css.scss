@@ -30,6 +30,33 @@
    height: 100%;
  }
 
+ .nav-bar {
+   background-color: white;
+   -webkit-box-shadow: 10px 10px 5px 0px rgba(107,107,107,1);
+   -moz-box-shadow: 10px 10px 5px 0px rgba(107,107,107,1);
+   box-shadow: 10px 10px 5px 0px rgba(107,107,107,1);
+
+   display: flex;
+   justify-content: space-between;
+ }
+
+ #nav-button-container {
+   align-self: flex-end;
+   display: flex;
+   justify-content: space-around;
+   height: 50px;
+   width: 40%;
+ }
+
+ .nav-button {
+   cursor: pointer;
+   width: 60px;
+   height: 70%;
+   border: none;
+   color: white;
+   background: rgb(175, 52, 59);
+ }
+
  li {
    list-style: none;
  }
@@ -44,10 +71,6 @@
  body {
    font-family: 'Martel Sans', sans-serif;
    height: 100%;
-  //  background-image: url(http://i.imgur.com/Vo613Lb.jpg);
-  //  background-repeat: no-repeat;
-  //  background-size: cover;
-  //  background-position: center;
    margin: 0px;
  }
 
@@ -133,6 +156,7 @@
 
  .splash-page {
    background-color: rgb(175, 52, 59);
+
  }
 
  #poke {
@@ -168,6 +192,10 @@
   height: 100px;
   width: 100px;
   clip: rect(10px, 100px, 100px, 10px);
+}
+
+.logo:hover {
+  cursor: pointer;
 }
 
 .index-image {
@@ -221,8 +249,9 @@
   width: 300px;
   padding: 3px;
   margin: 5px;
-  border-bottom: 3px gray;
-  border-right: 3px gray;
+  -webkit-box-shadow: 10px 10px 15px -2px rgba(74,72,74,1);
+  -moz-box-shadow: 10px 10px 15px -2px rgba(74,72,74,1);
+  box-shadow: 10px 10px 15px -2px rgba(74,72,74,1);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -298,11 +327,13 @@
   display: flex;
   justify-content: space-between;
   background-color: white;
+  border-bottom: black 10px solid;
+
 }
 
 #thumbnail {
-  height: 100px;
-  width: 100px;
+  width: 100% !important;
+  height: auto !important;
 }
 
 #logo-title {
@@ -393,11 +424,24 @@
   color: red;
 }
 
-.upload-button {
+.upload-button-container {
   display: flex;
   flex-direction: column;
-  height: auto;
+  justify-content: space-around;
+  align-items: center;
+  height: 125px;
+  width: 100px;
   padding: 3px;
+
+}
+
+#upload-button {
+  cursor: pointer;
+  color: rgb(175, 52, 59);
+  border: none;
+  background: white;
+  height: 30px;
+  width: 90%;
 }
 
 ::-webkit-input-placeholder {

@@ -27,9 +27,12 @@ var React = require('react'),
 
     render: function () {
       this.redirectToHome();
-      // if (this.props.location.pathname === '/'){
-      //
-      // }
+      var AuthOrNav;
+      if (this.props.location.pathname === '/'){
+        AuthOrNav = (<LoginForm />);
+      }else {
+        AuthOrNav = (<NavBar />);
+      }
 
       var trainerClass = 'basic';
       if (this.state.currentUser) {
@@ -37,6 +40,7 @@ var React = require('react'),
       }
       return (
         <div className={trainerClass}>
+          {AuthOrNav}
           {this.props.children}
         </div>
       );
@@ -45,13 +49,11 @@ var React = require('react'),
 
   var routes = (
     <Route path ='/' component={App}>
-      <IndexRoute component={LoginForm}/>
-
+      
         <Route path='trainer-home' component={TrainerHome}/>
         <Route path='trainer/:trainerId' component={TrainerShow}/>
         <Route path='visitors' component={Visitors}/>
         <Route path='likes' component={Likes}/>
-
     </Route>
   );
 
