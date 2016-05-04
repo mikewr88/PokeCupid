@@ -11,20 +11,30 @@ class User < ActiveRecord::Base
     foreign_key: :liker_id,
     class_name: 'Like'
 
+  has_many :liking_users,
+    foreign_key: :likee_id,
+    class_name: 'Like'
+
+
   has_many :likees,
     through: :likes,
     source: :likee
 
   has_many :likers,
-    through: :likes,
+    through: :liking_users,
     source: :liker
 
   has_many :visits,
     foreign_key: :visitor_id,
     class_name: 'Visit'
 
+  has_many :visiting_users,
+    foreign_key: :visitee_id,
+    class_name: 'Visit'
+
+
   has_many :visitors,
-    through: :visits,
+    through: :visiting_users,
     source: :visitor
 
 

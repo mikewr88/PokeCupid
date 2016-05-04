@@ -12,8 +12,22 @@ module.exports = React.createClass({
 
   componentWillMount: function () {
     this.sessionListener = SessionStore.addListener(this.redirect);
+    TrainerActions.fetchAllTrainers();
   },
-  
+
+  componentDidMount: function () {
+
+    this.trainerListener = TrainerStore.addListener(this.getTrainer);
+  },
+
+  componentWillUnmount: function () {
+    this.trainerListener.remove();
+  },
+
+  getTrainer: function () {
+    this.setState({trainer: TrainerStore.find(parseInt(this.props.params.trainerId))});
+  },
+
   redirect: function () {
     if (!SessionStore.currentUser()){
       hashHistory.push('/');

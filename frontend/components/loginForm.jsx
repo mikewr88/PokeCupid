@@ -15,9 +15,11 @@ module.exports = React.createClass({
   mixins: [LinkedStateMixin, CurrentUserStateMixin],
 
   componentWillMount: function () {
+    SessionActions.fetchCurrentUser();
     if (this.state.currentUser){
       hashHistory.push('/trainer-home');
     }
+
   },
 
   getInitialState: function () {

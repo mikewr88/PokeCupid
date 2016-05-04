@@ -9,7 +9,7 @@ module.exports = {
     };
   },
 
-  componentDidMount: function () {
+  componentWillMount: function () {
     SessionStore.addListener(this.updateCurrentUser);
     if (typeof SessionStore.currentUser()=== 'undefined'){
       SessionActions.fetchCurrentUser();

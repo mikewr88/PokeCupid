@@ -39,6 +39,9 @@ TrainerStore.all = function () {
 };
 
 TrainerStore.find = function (trainerId) {
+  if (typeof _trainers === 'undefined'){
+    return {};
+  }
   return Object.assign({}, _trainers[trainerId]);
 };
 
