@@ -67,7 +67,7 @@ TrainerStore.filterAll = function (location, gender, type) {
     if (
           (location === _trainers[id].location || location === 'Location') &&
           (gender === _trainers[id].gender || gender === 'Gender') &&
-          (type === _trainers[id].trainer_type || type ==='Type')
+          (type === _trainers[id].trainer_type || type === 'Type')
        ){
       trainers.push(_trainers[id]);
     }

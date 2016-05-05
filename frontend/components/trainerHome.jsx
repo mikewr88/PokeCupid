@@ -74,19 +74,19 @@ module.exports = React.createClass({
   handleTypeDropdown: function (event) {
     event.preventDefault();
     this.setState({trainer_type: event.target.value});
-    this.setState({trainers: TrainerStore.filterAll(this.state.location, this.state.gender, this.state.trainer_type)});
+    this.setState({trainers: TrainerStore.filterAll(this.state.location, this.state.gender, event.target.value)});
   },
 
   handleGenderDropdown: function (event) {
     event.preventDefault();
     this.setState({gender: event.target.value});
-    this.setState({trainers: TrainerStore.filterAll(this.state.location, this.state.gender, this.state.trainer_type)});
+    this.setState({trainers: TrainerStore.filterAll(this.state.location, event.target.value, this.state.trainer_type)});
   },
 
   handleLocationDropdown: function (event) {
     event.preventDefault();
     this.setState({location: event.target.value});
-    this.setState({trainers: TrainerStore.filterAll(this.state.location, this.state.gender, this.state.trainer_type)});
+    this.setState({trainers: TrainerStore.filterAll(event.target.value, this.state.gender, this.state.trainer_type)});
   },
 
   handleAll: function (event) {
