@@ -7,7 +7,6 @@ var TrainerActions = require('../actions/client_actions/trainer_actions');
 
 module.exports = React.createClass({
   getInitialState: function () {
-    console.log(VisitStore.allVisitors());
     return {visitors: VisitStore.allVisitors()};
   },
 

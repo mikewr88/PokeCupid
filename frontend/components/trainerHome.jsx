@@ -10,13 +10,15 @@ var LikeStore = require('../stores/like_store');
 var TrainerActions = require('../actions/client_actions/trainer_actions');
 var TrainerIndexItem = require('./trainerIndexItem');
 var Visitors = require('./visitors');
+var FilterConstants = require('../constants/filter_constants');
+var Dropdown = require('./loginDropdown');
 
 
 module.exports = React.createClass({
   mixins: [CurrentUserStateMixin],
 
   getInitialState: function () {
-    return {trainers: [], visitors: [], likes: []};
+    return {trainers: [], visitors: [], likes: [], location: 'Location', gender: 'Gender', trainer_type: 'Type'};
   },
   componentWillMount: function () {
     this.sessionListener = SessionStore.addListener(this.redirect);
@@ -69,16 +71,65 @@ module.exports = React.createClass({
     hashHistory.push('/likes');
   },
 
+  handleTypeDropdown: function (event) {
+    event.preventDefault();
+    this.setState({trainer_type: event.target.value});
+    this.setState({trainers: TrainerStore.filterAll(this.state.location, this.state.gender, this.state.trainer_type)});
+  },
+
+  handleGenderDropdown: function (event) {
+    event.preventDefault();
+    this.setState({gender: event.target.value});
+    this.setState({trainers: TrainerStore.filterAll(this.state.location, this.state.gender, this.state.trainer_type)});
+  },
+
+  handleLocationDropdown: function (event) {
+    event.preventDefault();
+    this.setState({location: event.target.value});
+    this.setState({trainers: TrainerStore.filterAll(this.state.location, this.state.gender, this.state.trainer_type)});
+  },
+
+  handleAll: function (event) {
+    event.preventDefault();
+    this.setState({trainers: TrainerStore.all(), location: 'Location', gender: 'Gender', trainer_type: 'Type' });
+  },
+
+
+
   render: function () {
-    console.log(this.state.likes);
+
     var array = [];
-    var trainers = TrainerStore.all();
+    var trainers = this.state.trainers;
     trainers.forEach(function (trainer){
        array.push(<TrainerIndexItem trainer={trainer}/>);
     });
       return (
         <div>
-          <div id="trainer-home-header">Browse Trainers</div>
+
+          <div id="trainer-home-container">
+            <div id="trainer-home-header">Browse Trainers</div>
+            <div id='filter-container'>
+              <button id="all-trainer-button" onClick={this.handleAll}>All Trainers</button>
+                <Dropdown catKey="gender"
+                          value={this.state.gender}
+                          category={FilterConstants.gender}
+                          onChange={this.handleGenderDropdown}></Dropdown>
+
+
+                <Dropdown catKey="trainer_type"
+                          value={this.state.trainer_type}
+                          category={FilterConstants.trainer_type}
+                          onChange={this.handleTypeDropdown}></Dropdown>
+
+
+                <Dropdown catKey="location"
+                          value={this.state.location}
+                          category={FilterConstants.location}
+                          onChange={this.handleLocationDropdown}></Dropdown>
+
+            </div>
+          </div>
+
           <ul className='trainer-home-ul'>
             {array}
           </ul>

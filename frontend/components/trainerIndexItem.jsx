@@ -40,7 +40,8 @@ module.exports = React.createClass({
           <p>From {this.props.trainer.location}</p>
           <p>{this.props.trainer.trainer_type} Trainer</p>
         </div>
-        <button id="like-button" onClick={this.createLike}>Like</button>
+        <img src="http://i.imgur.com/g2sYshv.png" onClick={this.createLike} className='like-button'></img>
+
       </li>
     );
   }

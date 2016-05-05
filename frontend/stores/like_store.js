@@ -20,7 +20,7 @@ LikeStore.__onDispatch = function (payload) {
 
 
 LikeStore.updateLikes = function (likers) {
-  console.log(likers);
+  
   // _likers = likers;
 };
 

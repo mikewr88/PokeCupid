@@ -55,6 +55,7 @@ module.exports = React.createClass({
         <button id="like-button" onClick={this.createLike}>Like This Trainer</button>
         <div id='show-info'>
           <h2 className="trainer-show-username">{this.state.trainer.username}</h2>
+          <h2 className="trainer-show-description">{this.state.trainer.description}</h2>
           <h2 className="trainer-show-trainer-type">{this.state.trainer.trainer_type}</h2>
           <h2 className="trainer-show-location">{this.state.trainer.location}</h2>
           <h2 className="trainer-show-gender">{this.state.trainer.gender}</h2>

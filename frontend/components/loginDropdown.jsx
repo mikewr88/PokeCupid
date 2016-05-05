@@ -13,8 +13,8 @@ var Dropdown = React.createClass({
     var num = 1;
     for (var key in category){
       dropdownArr.push(
-        <option
-          className='dropdown-option' key={num} value={category[key]}>{category[key]}
+        <option className='dropdown-option' key={num} value={category[key]}>
+          {category[key]}
         </option>
       );
       num++;

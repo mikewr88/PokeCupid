@@ -23,7 +23,8 @@ module.exports = {
                     gender: data.gender,
                     location: data.location,
                     trainer_type: data.trainer_type,
-                    image_url: data.image_url
+                    image_url: data.image_url,
+                    description: data.description
                   }},
       success: function (user) {
         SessionServerActions.signUp(user);

@@ -30,7 +30,7 @@ module.exports = React.createClass({
   },
 
   render: function () {
-    console.log(this.state.likers);
+    
     var LikeList = this.state.likers.map(function (liker) {
       return (<li className="liker-list-item">{liker.username}</li>);
     });

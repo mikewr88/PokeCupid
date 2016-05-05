@@ -29,9 +29,11 @@
    outline: none;
  }
 
+ html {
+ }
+
 
  #root {
-   height: 100%;
  }
 
  .nav-bar {
@@ -53,8 +55,11 @@
  }
 
  .nav-button {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
    cursor: pointer;
-   width: 60px;
+   width: auto;
    height: 70%;
    border: none;
    color: white;
@@ -64,6 +69,18 @@
  .nav-button:hover {
    background-color: rgb(193, 93, 87);
    transition: background-color 0.3s ease;
+ }
+
+ .bubble {
+   color: rgb(175, 52, 59);
+   background-color: white;
+   height: 16px;
+   width: 16px;
+   padding: 2px;
+   margin: 2px;
+   border-radius: 200px 200px 200px 200px;
+   -moz-border-radius: 200px 200px 200px 200px;
+   -webkit-border-radius: 200px 200px 200px 200px;
  }
 
  li {
@@ -78,6 +95,7 @@
    display: flex;
    flex-wrap: wrap;
    justify-content: space-around;
+   min-height: 520px;
  }
 
  #trainer-home-header {
@@ -85,94 +103,95 @@
    font-size: 30px;
    color: white;
    height: 50px;
-   top: 20px;
+   top: 10px;
    left: 50px;
  }
 
  body {
    font-family: 'Martel Sans', sans-serif;
-   height: 100%;
+
    margin: 0px;
+
  }
 
  .basic {
    background-color: rgb(175, 52, 59);
-
+   min-height: 100vh;
  }
 
  .Water {
    background-color: rgb(103, 151, 234);
-   height: 100%;
+   min-height: 100vh;
  }
 
  .Grass {
    background-color: rgb(137, 192, 94);
-   height: 100%;
+   min-height: 100vh;
  }
 
  .Fire{
    background-color: rgb(231, 133, 64);
-   height: 100%;
+   min-height: 100vh;
  }
 
  .Normal {
    background-color: rgb(169, 166, 124);
-   height: 100%;
+   min-height: 100vh;
  }
 
  .Fighting {
    background-color: rgb(182, 66, 47);
-   height: 100%;
+   min-height: 100vh;
  }
 
  .Flying {
    background-color: rgb(162, 153, 235);
-   height: 100%;
+   min-height: 100vh;
  }
 
  .Poison {
    background-color: rgb(151, 82, 157);
-   height: 100%;
+   min-height: 100vh;
  }
 
  .Ground {
    background-color: rgb(222, 190, 115);
-   height: 100%;
+   min-height: 100vh;
  }
 
  .Rock {
    background-color: rgb(183, 157, 72);
-   height: 100%;
+   min-height: 100vh;
  }
 
  .Bug {
    background-color: rgb(173, 178, 61);
-   height: 100%;
+   min-height: 100vh;
  }
 
  .Ghost {
    background-color: rgb(108, 95, 148);
-   height: 100%;
+   min-height: 100vh;
  }
 
  .Electric {
    background-color: rgb(246, 205, 79);
-   height: 100%;
+   min-height: 100vh;
  }
 
  .Psychic {
    background-color: rgb(236, 108, 137);
-   height: 100%;
+   min-height: 100vh;
  }
 
  .Ice {
    background-color: rgb(161, 214, 215);
-   height: 100%;
+   min-height: 100vh;
  }
 
  .Dragon {
    background-color: rgb(97, 90, 240);
-   height: 100%;
+   min-height: 100vh;
  }
 
  .splash-page {
@@ -194,10 +213,13 @@
 
  }
 
- #logo-title > #cupid, #poke {
+ .nav-bar #cupid {
    font-size: 30px;
  }
 
+ .nav-bar #poke {
+   font-size: 30px;
+ }
 
 #login-button {
   color: white;
@@ -236,9 +258,13 @@
   -webkit-border-radius: 52px 52px 52px 52px;
   border: 2px solid rgb(175, 52, 59);
   transition: border-radius 0.2s ease-out, -moz-border-radius 0.2s ease-out, -webkit-border-radius 0.2s ease-out;
+  display: flex;
+  // max-width: 250px;
+  max-height: inherit;
+  // height: 100%;
 
-  width: 100% !important;
-  height: auto !important;
+  // width: 100% !important;
+  // height: auto !important;
 
 }
 
@@ -253,8 +279,10 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 250px;
-  width: 200px;
+  padding: 5px;
+  max-height: 250px;
+  max-width: 250px;
+
   border-bottom: #bf5e5e solid 2px;
 }
 
@@ -293,8 +321,9 @@
 .trainer-index-item {
   background: white;
   width: 300px;
-  padding: 3px;
-  margin: 5px;
+  padding: 5px;
+  margin-top: 15px;
+  margin-bottom: 15px;
   -webkit-box-shadow: 10px 10px 15px -2px rgba(74,72,74,1);
   -moz-box-shadow: 10px 10px 15px -2px rgba(74,72,74,1);
   box-shadow: 10px 10px 15px -2px rgba(74,72,74,1);
@@ -330,6 +359,42 @@
 .sign-up-dropdown:hover {
   background: rgb(204, 204, 204);
   transition: background 0.3s ease;
+}
+
+#trainer-home-container {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  padding: 6px;
+}
+
+#all-trainer-button {
+  font-family: 'Martel Sans', sans-serif;
+  cursor: pointer;
+  padding: 4px;
+  color: rgb(175, 52, 59);
+  background: white;
+  text-align: center;
+  border: none;
+  border-radius: 6px 6px 6px 6px;
+  -moz-border-radius: 6px 6px 6px 6px;
+  -webkit-border-radius: 6px 6px 6px 6px;
+
+}
+
+#all-trainer-button:hover {
+  background: rgb(204, 204, 204);
+  transition: background 0.3s ease;
+}
+
+#filter-container {
+  position: relative;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: space-between;
+  width: 270px;
+  padding: 5px;
 }
 
 .input-text {
@@ -389,6 +454,13 @@
   height: 50px;
 }
 
+.splash-header > #logo-title {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  height: 110px;
+}
+
 #modal-button {
   padding: 5px;
   background-color: rgb(175, 52, 59);
@@ -402,6 +474,8 @@
 
 #modal-button:hover {
   cursor: pointer;
+  background-color: rgb(193, 93, 87);
+  transition: background-color 0.3s ease;
 }
 
 #modal-button-div {
@@ -526,19 +600,20 @@
   width: 90%;
 }
 
-#like-button {
+.like-button {
+  position: relative;
   cursor: pointer;
-  font-size: 20px;
-  color: white;
+  height: 50px;
+  width: 50px;
   border: none;
-  background: rgb(175, 52, 59);
-  height: 30px;
-  width: 90%;
+  -webkit-box-shadow: 0px 95px 83px -78px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 95px 83px -78px rgba(0,0,0,0.75);
+  box-shadow: 0px 95px 83px -78px rgba(0,0,0,0.75);
 }
 
-#like-button:hover {
-  background-color: rgb(193, 93, 87);
-  transition: background-color 0.3s ease;
+.like-button:hover {
+  animation: shake 1s infinite;
+
 }
 
 ::-webkit-input-placeholder {
@@ -555,4 +630,13 @@
 
 :-ms-input-placeholder {
    color: rgba(175, 52, 59, 1);
+}
+
+@keyframes shake {
+  0% { transform: translate(0, 0) rotate(0); }
+  20% { transform: translate(-2px, 0) rotate(-10deg); }
+  30% { transform: translate(2px, 0) rotate(10deg); }
+  50% { transform: translate(-2px, 0) rotate(-10deg); }
+  60% { transform: translate(2px, 0) rotate(10deg); }
+  100% { transform: translate(0, 0) rotate(0); }
 }
