@@ -33,10 +33,17 @@ module.exports = {
     });
   },
 
-  receiveLike: function (like) {
+  receiveLike: function (likee_id) {
     AppDispatcher.dispatch({
-      actionType: LikeConstants.LIKE_RECEIVED,
-      like: like
+      actionType: LikeConstants.LIKEE_RECEIVED,
+      likee_id: likee_id
+    });
+  },
+
+  deleteLike: function (likee_id) {
+    AppDispatcher.dispatch({
+      actionType:LikeConstants.REMOVE_LIKEE,
+      likee_id: likee_id
     });
   },
 
@@ -45,5 +52,20 @@ module.exports = {
       actionType: LikeConstants.LIKERS_RECEIVED,
       likers: likers
     });
+  },
+
+  receiveLikees: function (likees) {
+    AppDispatcher.dispatch({
+      actionType: LikeConstants.LIKEES_RECEIVED,
+      likees: likees
+    });
+  },
+
+  receiveSearchResults: function (trainers) {
+    AppDispatcher.dispatch({
+      actionType: TrainerConstants.TRAINERS_RECEIVED,
+      trainers: trainers
+    });
+
   }
 };

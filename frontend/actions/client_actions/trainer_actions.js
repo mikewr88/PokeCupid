@@ -17,7 +17,19 @@ module.exports = {
     TrainerApiUtil.createLike(liker_id, likee_id);
   },
 
+  destroyLike: function (liker_id, likee_id) {
+    TrainerApiUtil.destroyLike(liker_id,likee_id);
+  },
+
   fetchLikers: function () {
     TrainerApiUtil.fetchLikers();
+  },
+
+  fetchLikees: function () {
+    TrainerApiUtil.fetchLikees();
+  },
+
+  queryTrainers: function (query) {
+    TrainerApiUtil.getMatchingTrainers(query);
   }
 };

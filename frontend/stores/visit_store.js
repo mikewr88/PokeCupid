@@ -10,17 +10,18 @@ VisitStore.__onDispatch = function (payload) {
   switch (payload.actionType) {
     case VisitConstants.VISIT_RECEIVED:
       VisitStore.updateVisits(payload.visit);
+        VisitStore.__emitChange();
       break;
     case VisitConstants.VISITORS_RECEIVED:
       VisitStore.receiveVisitors(payload.visitors);
+        VisitStore.__emitChange();
       break;
   }
-  VisitStore.__emitChange();
 };
 
 
 VisitStore.updateVisits = function (visitors) {
-  
+
   // _visitors = visitors;
 };
 

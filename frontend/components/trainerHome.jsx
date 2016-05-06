@@ -1,4 +1,5 @@
 var React = require('react');
+var ReactDOM = require('react-dom');
 var LinkedStateMixin = require('react-addons-linked-state-mixin');
 var SessionStore = require('../stores/session_store');
 var CurrentUserStateMixin = require('../mixins/current_user_state');
@@ -12,13 +13,14 @@ var TrainerIndexItem = require('./trainerIndexItem');
 var Visitors = require('./visitors');
 var FilterConstants = require('../constants/filter_constants');
 var Dropdown = require('./loginDropdown');
+var Search = require('./searchBar');
 
 
 module.exports = React.createClass({
   mixins: [CurrentUserStateMixin],
 
   getInitialState: function () {
-    return {trainers: [], visitors: [], likes: [], location: 'Location', gender: 'Gender', trainer_type: 'Type'};
+    return {trainers: [], visitors: [], likes: [], likees: LikeStore.allLikees(), location: 'Location', gender: 'Gender', trainer_type: 'Type'};
   },
   componentWillMount: function () {
     this.sessionListener = SessionStore.addListener(this.redirect);
@@ -34,6 +36,7 @@ module.exports = React.createClass({
   },
 
   trainerChange: function () {
+
     this.setState({trainers: TrainerStore.all()});
   },
 
@@ -42,7 +45,7 @@ module.exports = React.createClass({
   },
 
   likesChange: function () {
-    this.setState({likes: LikeStore.allLikers()});
+    this.setState({likes: LikeStore.allLikers(), likees: LikeStore.allLikees()});
   },
 
   componentWillUnmount: function () {
@@ -91,47 +94,60 @@ module.exports = React.createClass({
 
   handleAll: function (event) {
     event.preventDefault();
+
     this.setState({trainers: TrainerStore.all(), location: 'Location', gender: 'Gender', trainer_type: 'Type' });
+
   },
 
 
 
   render: function () {
 
-    var array = [];
+
+    var trainerArray = [];
     var trainers = this.state.trainers;
     trainers.forEach(function (trainer){
-       array.push(<TrainerIndexItem trainer={trainer}/>);
-    });
+      var liked;
+      if (this.state.likees.indexOf(trainer.id) === -1) {
+        liked = false;
+      }else{
+        liked= true;
+      }
+       trainerArray.push(<TrainerIndexItem liked={liked} trainer={trainer}/>);
+    }.bind(this));
       return (
         <div>
 
           <div id="trainer-home-container">
             <div id="trainer-home-header">Browse Trainers</div>
+            <Search />
             <div id='filter-container'>
               <button id="all-trainer-button" onClick={this.handleAll}>All Trainers</button>
                 <Dropdown catKey="gender"
                           value={this.state.gender}
                           category={FilterConstants.gender}
-                          onChange={this.handleGenderDropdown}></Dropdown>
+                          onChange={this.handleGenderDropdown}
+                          sel={this.state.gender}></Dropdown>
 
 
                 <Dropdown catKey="trainer_type"
                           value={this.state.trainer_type}
                           category={FilterConstants.trainer_type}
-                          onChange={this.handleTypeDropdown}></Dropdown>
+                          onChange={this.handleTypeDropdown}
+                          sel={this.state.trainer_type}></Dropdown>
 
 
                 <Dropdown catKey="location"
                           value={this.state.location}
                           category={FilterConstants.location}
-                          onChange={this.handleLocationDropdown}></Dropdown>
+                          onChange={this.handleLocationDropdown}
+                          sel={this.state.location}></Dropdown>
 
             </div>
           </div>
 
           <ul className='trainer-home-ul'>
-            {array}
+            {trainerArray}
           </ul>
         </div>
       );

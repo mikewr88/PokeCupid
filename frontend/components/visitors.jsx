@@ -1,13 +1,15 @@
 var React = require('react');
 var TrainerStore = require('../stores/trainer_store');
 var SessionStore = require('../stores/session_store');
+var LikeStore = require('../stores/like_store');
 var hashHistory = require('react-router').hashHistory;
 var VisitStore = require('../stores/visit_store');
 var TrainerActions = require('../actions/client_actions/trainer_actions');
+var TrainerIndexItem = require('./trainerIndexItem');
 
 module.exports = React.createClass({
   getInitialState: function () {
-    return {visitors: VisitStore.allVisitors()};
+    return {visitors: VisitStore.allVisitors(), likes: [], likees: LikeStore.allLikees()};
   },
 
   componentWillMount: function () {
@@ -22,23 +24,49 @@ module.exports = React.createClass({
 
   componentDidMount: function () {
     this.visitorListener = VisitStore.addListener(this.updateVisitors);
+    this.likesListener = LikeStore.addListener(this.likesChange);
+    TrainerActions.fetchLikers();
+
     TrainerActions.fetchVisitors();
   },
+
+
+  likesChange: function () {
+    this.setState({likes: LikeStore.allLikers(), likees: LikeStore.allLikees()});
+  },
+
+  componentWillUnmount: function () {
+    this.likesListener.remove();
+    this.sessionListener.remove();
+    this.visitorListener.remove();
+  },
+
 
   updateVisitors: function () {
     this.setState({visitors: VisitStore.allVisitors()});
   },
 
   render: function () {
-    var VisitList = this.state.visitors.map(function (visitor) {
-      return (<li className="visitor-list-item">{visitor.username}</li>);
-    });
+
+    var visitorArray = [];
+    var visitors = this.state.visitors;
+    visitors.forEach(function (visitor){
+      var liked;
+      if (this.state.likees.indexOf(visitor.id) === -1) {
+        liked = false;
+      }else{
+        liked= true;
+      }
+       visitorArray.push(<TrainerIndexItem liked={liked} trainer={visitor}/>);
+    }.bind(this));
+
+
     return (
       <div>
         <h1>Visitors to Your Page!</h1>
         <br></br>
-        <ul id="visit-list-container">
-          {VisitList}
+        <ul className="trainer-home-ul">
+          {visitorArray}
         </ul>
       </div>
     );

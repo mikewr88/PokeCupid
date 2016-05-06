@@ -50,7 +50,18 @@ module.exports = {
       url: 'api/likes',
       data: {like: {liker_id: liker_id, likee_id: likee_id}},
       success: function (like) {
-        TrainerServerActions.receiveLike(like);
+        TrainerServerActions.receiveLike(like.likee_id);
+      }
+    });
+  },
+
+  destroyLike: function (liker_id, likee_id) {
+    $.ajax({
+      method: 'DELETE',
+      url: 'api/like',
+      data: {like: {liker_id: liker_id, likee_id: likee_id}},
+      success: function (like) {
+        TrainerServerActions.deleteLike(like.likee_id);
       }
     });
   },
@@ -61,6 +72,18 @@ module.exports = {
       url: 'api/likes',
       success: function (data) {
         TrainerServerActions.receiveLikers(data.likers);
+        TrainerServerActions.receiveLikees(data.likees);
+      }
+    });
+  },
+
+  getMatchingTrainers: function (query) {
+    $.ajax({
+      method: "GET",
+      url: 'api/users',
+      data: {search: query},
+      success: function (matchingTrainers) {
+        TrainerServerActions.receiveSearchResults(matchingTrainers);
       }
     });
   }

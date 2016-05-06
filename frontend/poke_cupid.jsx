@@ -14,19 +14,25 @@ var React = require('react'),
     SessionApiUtil = require('./util/session_api_util'),
     SessionActions = require('./actions/client_actions/session_actions'),
     CurrentUserStateMixin = require('./mixins/current_user_state'),
-    Modal = require("react-modal");
+    Modal = require("react-modal"),
+    SessionStore = require('./stores/session_store');
 
 
   var App = React.createClass({
     mixins: [CurrentUserStateMixin],
     redirectToHome: function () {
-      if (this.props.location.pathname === '/' && this.state.currentUser){
+
+      if (this.props.location.pathname === '/' && SessionStore.currentUser()){
+        
         hashHistory.push('trainer-home');
       }
     },
 
-    render: function () {
+    componentWillUpdate: function () {
       this.redirectToHome();
+    },
+
+    render: function () {
       var AuthOrNav;
       if (this.props.location.pathname === '/'){
         AuthOrNav = (<LoginForm />);
@@ -49,7 +55,7 @@ var React = require('react'),
 
   var routes = (
     <Route path ='/' component={App}>
-      
+
         <Route path='trainer-home' component={TrainerHome}/>
         <Route path='trainer/:trainerId' component={TrainerShow}/>
         <Route path='visitors' component={Visitors}/>

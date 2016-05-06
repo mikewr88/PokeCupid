@@ -11,9 +11,15 @@ var Dropdown = React.createClass({
     var category = this.props.category;
     var dropdownArr = [];
     var num = 1;
+    var selected;
     for (var key in category){
+      if (category[key] === this.props.sel){
+        selected = true;
+      }else {
+        selected = false;
+      }
       dropdownArr.push(
-        <option className='dropdown-option' key={num} value={category[key]}>
+        <option id={this.props.value} className='dropdown-option' key={num} value={category[key]} selected={selected}>
           {category[key]}
         </option>
       );

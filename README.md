@@ -11,7 +11,7 @@ PokeCupid is a web application inspired by OkCupid that will be build using Ruby
 - [ ] New account creation, login, and guest/demo login
 - [ ] Smooth, bug-free navigation
 - [ ] Adequate seed data to demonstrate the site's features
-- [ ] The necessary features for the site: making a profile with Pokemon, liking other people, viewing details of other profiles, notification of likes in the nav bar
+- [ ] The necessary features for the site: making a profile, liking other people, viewing details of other profiles, notification of likes and visitors in the nav bar
 - [ ] Hosting on Heroku
 - [ ] CSS styling that is visually appealing and emulates that of OkCupid
 
@@ -68,7 +68,7 @@ PokeCupid will allow users to do the following:
 - implement each Trainer component, building out the flux loop as needed.
   - [x] `TrainerHome`
   - [x] `TrainerIndexItem`
-  - [ ] `SearchBar`
+  - [x] `SearchBar`
   - [x] `Visitors`
   - [x] `TrainerShow`
   - [x] `Likes`
@@ -80,10 +80,10 @@ PokeCupid will allow users to do the following:
 - [x] create `Likes` and `Visitors` model
 - build out API, Flux loop, and components for:
   - [x] Likes and Visitors CRUD
-  - [ ] Liking a user or visiting a user's page notifies that user
+  - [x] Liking a user or visiting a user's page notifies that user
   - [x] Visitor Index shows visitors to your profile
   - [x] Likes Index Page
-- [ ] seed the database with a small amount of test data
+- [x] seed the database with a small amount of test data
 
 
 ### Phase 4: NavBar and Styling (2.5 days)
@@ -91,11 +91,11 @@ PokeCupid will allow users to do the following:
 **Objective:** Able to view pages for Trainers. Links to other pages work. NavBar will allow links
 to other pages as well
 
-- [ ] create NavBar
+- [x] create NavBar
 - [ ] create a basic style guide
 - [ ] position elements on the page
-- [ ] add basic colors & styles
-- [ ] make notification bubbles for visited and likes
+- [x] add basic colors & styles
+- [x] make notification bubbles for visited and likes
 
 ### Phase 5: Styling Cleanup and fixing up (1.5 days)
 

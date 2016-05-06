@@ -295,27 +295,44 @@
 
 }
 
+#show-img-like {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  width: 80%;
+}
+
 .trainer-show-img {
   width: 100% !important;
   height: auto !important;
+  border-radius: 42px 42px 42px 42px;
+  -moz-border-radius: 42px 42px 42px 42px;
+  -webkit-border-radius: 42px 42px 42px 42px;
+  border: 0px solid #000000;
 }
 
 #show-img-container {
   display: flex;
   align-items: center;
-  width: 250px;
+  width: 400px;
 }
 
 #show-page {
+  position: relative;
+  top: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 #show-info {
+
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  margin-top: 40px;
+  width: 80%;
   background: white;
+  color: rgb(175, 52, 59);
 }
 
 .trainer-index-item {
@@ -366,6 +383,30 @@
   justify-content: space-between;
   align-content: center;
   padding: 6px;
+}
+
+#search-container {
+  position: relative;
+  top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-bar {
+  color: rgb(175, 52, 59);
+  width: 250px;
+  height: 30px;
+  border-radius: 6px 6px 6px 6px;
+  -moz-border-radius: 6px 6px 6px 6px;
+  -webkit-border-radius: 6px 6px 6px 6px;
+  transition: height .3s linear;
+  font-size: 16px;
+}
+
+.search-bar:focus {
+  height: 35px;
+  transition: height 0.3s linear;
 }
 
 #all-trainer-button {
@@ -551,7 +592,7 @@
 
 .input-text.input-modal.username {
   background-color: rgba(230, 230, 230, .4);
-  color: white;
+  color: rgba(175, 52, 59, 1);
   font-size: 15px;
   padding: 5px;
 }
@@ -603,15 +644,23 @@
 .like-button {
   position: relative;
   cursor: pointer;
-  height: 50px;
-  width: 50px;
+  height: 60px;
+  width: 60px;
   border: none;
   -webkit-box-shadow: 0px 95px 83px -78px rgba(0,0,0,0.75);
   -moz-box-shadow: 0px 95px 83px -78px rgba(0,0,0,0.75);
   box-shadow: 0px 95px 83px -78px rgba(0,0,0,0.75);
 }
 
-.like-button:hover {
+.dislike-button {
+  position: relative;
+  cursor: pointer;
+  height: 60px;
+  width: 60px;
+  border: none;
+  -webkit-box-shadow: 0px 95px 83px -78px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 95px 83px -78px rgba(0,0,0,0.75);
+  box-shadow: 0px 95px 83px -78px rgba(0,0,0,0.75);
   animation: shake 1s infinite;
 
 }

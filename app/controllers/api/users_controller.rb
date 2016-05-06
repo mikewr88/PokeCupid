@@ -13,8 +13,11 @@ class Api::UsersController < ApplicationController
   end
 
   def index
-
-    @users = User.all
+    if query_exists?
+      @users = User.where("users.username ILIKE :q", q: "#{query_param}%")
+    else
+      @users = User.all
+    end
     render 'api/users/index'
   end
 
@@ -23,11 +26,15 @@ class Api::UsersController < ApplicationController
     render "api/visits/show"
   end
 
-  def destroy
-
+  def query_exists?
+    params[:search] && params[:search] != ""
   end
 
   private
+
+  def query_param
+    params[:search]
+  end
 
   def user_params
     params.require(:user).permit(:username, :password, :gender, :location, :trainer_type, :image_url, :description)

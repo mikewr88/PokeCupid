@@ -16,12 +16,12 @@ module.exports = React.createClass({
   },
 
   componentDidMount: function () {
-
     this.trainerListener = TrainerStore.addListener(this.getTrainer);
   },
 
   componentWillUnmount: function () {
     this.trainerListener.remove();
+    this.sessionListener.remove();
   },
 
   getTrainer: function () {
@@ -34,11 +34,6 @@ module.exports = React.createClass({
     }
   },
 
-  handleBack: function (event) {
-    event.preventDefault();
-    hashHistory.push("/trainer-home");
-  },
-
   createLike: function () {
     var trainerId = this.props.params.trainerId;
     TrainerActions.createLike(SessionStore.currentUser().id, trainerId);
@@ -47,18 +42,20 @@ module.exports = React.createClass({
   render: function () {
     return (
       <div id="show-page">
-        <button id="back-button" onClick={this.handleBack}>Back to Trainers</button>
-        <div id="show-img-container">
-          <img src={this.state.trainer.image_url} className="trainer-show-img"></img>
-        </div>
+        <div id="show-img-like">
+          <div id="show-img-container">
+            <img src={this.state.trainer.image_url} className="trainer-show-img"></img>
+          </div>
 
-        <button id="like-button" onClick={this.createLike}>Like This Trainer</button>
+          <button id="like-button" onClick={this.createLike}>Like This Trainer</button>
+
+        </div>
         <div id='show-info'>
-          <h2 className="trainer-show-username">{this.state.trainer.username}</h2>
-          <h2 className="trainer-show-description">{this.state.trainer.description}</h2>
-          <h2 className="trainer-show-trainer-type">{this.state.trainer.trainer_type}</h2>
-          <h2 className="trainer-show-location">{this.state.trainer.location}</h2>
-          <h2 className="trainer-show-gender">{this.state.trainer.gender}</h2>
+          <div className="trainer-show-username">{this.state.trainer.username}</div>
+          <div className="trainer-show-description">{this.state.trainer.description}</div>
+          <div className="trainer-show-trainer-type">{this.state.trainer.trainer_type}</div>
+          <div className="trainer-show-location">{this.state.trainer.location}</div>
+          <div className="trainer-show-gender">{this.state.trainer.gender}</div>
         </div>
 
       </div>

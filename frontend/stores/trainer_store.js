@@ -1,3 +1,4 @@
+
 var AppDispatcher = require('../dispatcher/dispatcher.js');
 var Store = require('flux/utils').Store;
 var TrainerConstants = require('../constants/trainer_constants');
@@ -8,16 +9,17 @@ var TrainerStore = new Store(AppDispatcher);
 var _trainers, _trainerErrors;
 
 TrainerStore.__onDispatch = function (payload) {
+
   switch (payload.actionType) {
     case TrainerConstants.TRAINERS_RECEIVED:
       TrainerStore.getTrainers(payload.trainers);
+      TrainerStore.__emitChange();
       break;
     case TrainerConstants.TRAINER_RECEIVED:
       TrainerStore.getTrainer(payload.trainer);
+      TrainerStore.__emitChange();
       break;
   }
-  TrainerStore.__emitChange();
-
 };
 
 TrainerStore.getTrainers = function (trainers) {
