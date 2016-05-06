@@ -5,8 +5,9 @@ var CONTENT_STYLE = {
     left            : 0,
     right           : 0,
     bottom          : 0,
-    backgroundColor : 'rgba(255, 255, 255, .7)',
-    zindex         : 10
+    backgroundColor : 'rgba(77, 77, 77, .7)',
+
+    zindex          : 10
   },
 content : {
     position        : 'fixed',
@@ -24,7 +25,8 @@ content : {
     width           : '365px',
     border          : '1px solid black',
     padding         : '20px',
-    zindex         : 11
+    zindex         : 11,
+    boxShadow       : '12px 12px 20px 3px rgba(0,0,0,0.8)'
   }
 };
 

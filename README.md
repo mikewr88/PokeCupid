@@ -8,26 +8,26 @@
 
 PokeCupid is a web application inspired by OkCupid that will be build using Ruby on Rails and React.js.  By the end of Week 9, this app will, at a minimum, satisfy the following criteria:
 
-- [ ] New account creation, login, and guest/demo login
-- [ ] Smooth, bug-free navigation
-- [ ] Adequate seed data to demonstrate the site's features
-- [ ] The necessary features for the site: making a profile, liking other people, viewing details of other profiles, notification of likes and visitors in the nav bar
-- [ ] Hosting on Heroku
-- [ ] CSS styling that is visually appealing and emulates that of OkCupid
+- [x] New account creation, login, and guest/demo login
+- [x] Smooth, bug-free navigation
+- [x] Adequate seed data to demonstrate the site's features
+- [x] The necessary features for the site: making a profile, liking other people, viewing details of other profiles, notification of likes and visitors in the nav bar
+- [x] Hosting on Heroku
+- [x] CSS styling that is visually appealing and emulates that of OkCupid
 
 ## Product Goals and Priorities
 
 PokeCupid will allow users to do the following:
 
-- [ ] Create an account (MVP)
-- [ ] Log in / Log out, including as a Guest/Demo User (MVP)
-- [ ] Create a detailed profile and answer questions for 'Better Matching' (MVP)
-- [ ] Browse photos and usernames for all users, utilizing infinite scroll (MVP)
-- [ ] Create and remove a Pokemon from your profile (MVP)
-- [ ] Search for other users (MVP)
-- [ ] Like, view, and communicate with other users (the latter being non-MVP)
-- [ ] See who has viewed your profile (MVP)
-- [ ] Ability to Filter Users by certain criteria (MVP)
+- [x] Create an account (MVP)
+- [x] Log in / Log out, including as a Guest/Demo User (MVP)
+- [x] Create a detailed profile (MVP)
+- [x] Browse photos and usernames for all users (MVP)
+- [x] Search for other users (MVP)
+- [x] Like, view, and communicate with other users (the latter being non-MVP)
+- [x] See who has viewed your profile (MVP)
+- [x] Ability to Filter Users by certain criteria (MVP)
+- [x] Adequate styling (MVP)
 - [ ] Quickmatch that recommends a user based on profile data (non-MVP)
 
 ## Design Docs
@@ -92,21 +92,23 @@ PokeCupid will allow users to do the following:
 to other pages as well
 
 - [x] create NavBar
-- [ ] create a basic style guide
-- [ ] position elements on the page
+- [x] create a basic style guide
+- [x] position elements on the page
 - [x] add basic colors & styles
 - [x] make notification bubbles for visited and likes
+- [x] can search for a user and screen will populate with matches to search string
+- [x] can filter users based on certain criteria
 
 ### Phase 5: Styling Cleanup and fixing up (1.5 days)
 
 **objective:** Make the site feel more cohesive and clean.
 
-- [ ] Get feedback on my UI from others
-- [ ] Refactor HTML classes & CSS rules
-- [ ] Add transitions and other styling flourishes.
+- [x] Get feedback on my UI from others
+- [x] Refactor HTML classes & CSS rules
+- [x] Add transitions and other styling flourishes.
 
 
-### Phase 6: Pokemon (1.5 days)
+### Phase 6: Pokemon (1.5 days) (bonus)
 
 **Objective:** Existing pages (including singup/signin) will look good. Pokemon can be created, viewed, destroyed through
 the API.
@@ -118,7 +120,6 @@ the API.
   - [ ] `PokemonIndex`
   - [ ] `PokemonDetail`
   - [ ] `PokemonForm`
-- [ ] can search for a user and screen will populate with matches to search string
 - [ ] can create and remove Pokemon for your profile
 
 

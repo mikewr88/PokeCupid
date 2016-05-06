@@ -39,24 +39,45 @@ module.exports = React.createClass({
     TrainerActions.createLike(SessionStore.currentUser().id, trainerId);
   },
 
+  destroyLike: function () {
+    var trainerId = this.props.params.trainerId;
+    TrainerActions.destroyLike(SessionStore.currentUser().id, trainerId);
+  },
+
   render: function () {
+    var imgUrl;
+    if (this.state.trainer.image_url) {
+      imgUrl = this.state.trainer.image_url;
+    } else {
+      imgUrl ='http://i.imgur.com/wOIqRXY.jpg';
+    }
+
+    var likeButton;
+    if (this.props.liked === false) {
+      likeButton = (<img src="http://i.imgur.com/g2sYshv.png" title="Like" onClick={this.createLike} className='like-button'></img>);
+    }else{
+      likeButton = (<img src="http://i.imgur.com/g2sYshv.png" title="Unlike" onClick={this.destroyLike} className='dislike-button'></img>);
+    }
+
     return (
       <div id="show-page">
+        <div id='trainer-show-header'>
+          <div className="trainer-show-username">{this.state.trainer.username}</div>
+          <div className="trainer-show-gender">{this.state.trainer.gender}</div>
+        </div>
+
         <div id="show-img-like">
           <div id="show-img-container">
             <img src={this.state.trainer.image_url} className="trainer-show-img"></img>
           </div>
 
-          <button id="like-button" onClick={this.createLike}>Like This Trainer</button>
-
-        </div>
         <div id='show-info'>
-          <div className="trainer-show-username">{this.state.trainer.username}</div>
-          <div className="trainer-show-description">{this.state.trainer.description}</div>
-          <div className="trainer-show-trainer-type">{this.state.trainer.trainer_type}</div>
-          <div className="trainer-show-location">{this.state.trainer.location}</div>
-          <div className="trainer-show-gender">{this.state.trainer.gender}</div>
+          <div className="trainer-show-description">About Me: {this.state.trainer.description}</div>
+          <div className="trainer-show-trainer-type">Type: {this.state.trainer.trainer_type}</div>
+          <div className="trainer-show-location">Hometown: {this.state.trainer.location}</div>
         </div>
+
+      </div>
 
       </div>
     );

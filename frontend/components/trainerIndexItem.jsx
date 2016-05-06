@@ -93,6 +93,7 @@ module.exports = React.createClass({
     }
 
     return (
+
       <li className='trainer-index-item' id={this.props.trainer.trainer_type}>
         <div className='card-name'>
           <p>{this.props.trainer.username}</p>

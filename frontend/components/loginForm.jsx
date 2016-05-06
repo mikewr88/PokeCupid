@@ -196,9 +196,6 @@ module.exports = React.createClass({
 
             <textarea rows='4' cols='50' placeholder='Add a description' className='description' valueLink={this.linkState('description')}></textarea>
 
-
-          <br></br>
-
           <Upload setImage={this.handleImage} />
           <div id="sign-up-bt-div">
             <button id='auth-button' onClick={this.handleSignUp} value='signUp' >Sign Up!</button>

@@ -64,6 +64,7 @@ module.exports = React.createClass({
     return (
       <div>
         <h1 id='trainer-home-header'>Visitors To Your Page!</h1>
+        <h1 id='trainer-home-header'>Someone Thinks You're a Catch</h1>
         <ul className="trainer-home-ul">
           {visitorArray}
         </ul>

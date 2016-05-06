@@ -18,15 +18,17 @@ module.exports = React.createClass({
   },
 
   render: function () {
-    var thumbnail = (<img id="thumbnail" src="http://i.imgur.com/TfpZkwN.jpg"></img>);
+    var thumbnail;
     if (this.state.thumbnail) {
       thumbnail = (<img id='thumbnail' src={this.state.thumbnail}></img>);
     }
     return (
+      <div id='upload-button-container-container'>
       <div className="upload-button-container">
         {thumbnail}
         <button id="upload-button" onClick={this.upload}>Upload a Photo!</button>
       </div>
+    </div>
     );
   }
 });

@@ -291,14 +291,14 @@
 }
 
 #index-item-info {
-  
+
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   color: white;
-  font-size: 16px;
+  font-size: 18px;
   width: 270px;
   background:  rgba(89, 89, 89, 0.3);
   border-radius: 8px 8px 8px 8px;
@@ -317,7 +317,8 @@
   display: flex;
   justify-content: space-around;
   flex-direction: row;
-  width: 80%;
+  align-content: center;
+  width: 95%;
 }
 
 .trainer-show-img {
@@ -338,19 +339,55 @@
 #show-page {
   position: relative;
   top: 40px;
+  padding-left: 50px;
+  padding-right: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  // background: url(http://i.imgur.com/fWi2nWp.gif) no-repeat center center;
+  // -webkit-background-size: cover;
+  // -moz-background-size: cover;
+  // -o-background-size: cover;
+  // background-size: cover;
 }
 
 #show-info {
 
   display: flex;
   flex-direction: column;
-  margin-top: 40px;
-  width: 80%;
-  background: white;
-  color: rgb(175, 52, 59);
+  // margin-top: 40px;
+  padding: 20px;
+  width: 50%;
+  height: 280px;
+  justify-content: space-between;
+  font-size: 20px;
+  background: rgba(89,89,89, 0.5);
+  color: white;
+  -webkit-box-shadow: 10px 10px 15px 1px rgba(0,0,0,0.8);
+  -moz-box-shadow: 10px 10px 15px 1px rgba(0,0,0,0.8);
+  box-shadow: 10px 10px 15px 1px rgba(0,0,0,0.8);
+  border-radius: 4px 4px 4px 4px;
+  -moz-border-radius: 4px 4px 4px 4px;
+  -webkit-border-radius: 4px 4px 4px 4px;
+}
+
+.trainer-show-username {
+  font-size: 50px;
+  color: white;
+  font-family: 'Pokemon Pixel Font Regular';
+}
+
+.trainer-show-gender {
+  margin-left: 30px;
+  font-size: 30px;
+  color: white;
+}
+
+#trainer-show-header {
+  width: 220px;
+  display: flex;
+  justify-content: center;
 }
 
 .trainer-index-item {
@@ -507,8 +544,8 @@
 }
 
 #thumbnail {
-  width: 100% !important;
-  height: auto !important;
+
+  max-height: inherit;
 }
 
 #logo-title {
@@ -646,13 +683,20 @@
 
 .upload-button-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  height: 125px;
-  width: 100px;
+  max-height: 100px;
+  width: 260px;
   padding: 3px;
 
+}
+
+#upload-button-container-container {
+  min-height: 105px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 #upload-button {
@@ -661,7 +705,7 @@
   border: none;
   background: white;
   height: 30px;
-  width: 90%;
+  width: 98px;
 }
 
 .like-button {
