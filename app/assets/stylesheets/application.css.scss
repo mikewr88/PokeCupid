@@ -14,6 +14,10 @@
  *= require_self
  */
 
+ p {
+   margin: 0px;
+ }
+
 
  @font-face {
    font-family: "Pokemon Pixel Font Regular";
@@ -256,7 +260,7 @@
   border-radius: 52px 52px 52px 52px;
   -moz-border-radius: 52px 52px 52px 52px;
   -webkit-border-radius: 52px 52px 52px 52px;
-  border: 2px solid rgb(175, 52, 59);
+  border: 2px solid rgb(223, 188, 81);
   transition: border-radius 0.2s ease-out, -moz-border-radius 0.2s ease-out, -webkit-border-radius 0.2s ease-out;
   display: flex;
   // max-width: 250px;
@@ -280,19 +284,33 @@
   flex-direction: column;
   justify-content: center;
   padding: 5px;
-  max-height: 250px;
-  max-width: 250px;
+  max-height: 230px;
+  max-width: 230px;
 
-  border-bottom: #bf5e5e solid 2px;
+  border-bottom: #000000 solid 2px;
 }
 
 #index-item-info {
+  
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  color: white;
+  font-size: 16px;
+  width: 270px;
+  background:  rgba(89, 89, 89, 0.3);
+  border-radius: 8px 8px 8px 8px;
+  -moz-border-radius: 8px 8px 8px 8px;
+  -webkit-border-radius: 8px 8px 8px 8px;
+  border: 1px solid #ccc;
+}
 
+.card-info {
+  display: flex;
+  align-items: center;
+  height: auto;
 }
 
 #show-img-like {
@@ -336,14 +354,19 @@
 }
 
 .trainer-index-item {
-  background: white;
+
+  position: relative;
   width: 300px;
   padding: 5px;
+  border: rgb(225, 191, 59) solid 8px;
   margin-top: 15px;
   margin-bottom: 15px;
-  -webkit-box-shadow: 10px 10px 15px -2px rgba(74,72,74,1);
-  -moz-box-shadow: 10px 10px 15px -2px rgba(74,72,74,1);
-  box-shadow: 10px 10px 15px -2px rgba(74,72,74,1);
+  -webkit-box-shadow: 10px 10px 15px 1px rgba(0,0,0,0.8);
+  -moz-box-shadow: 10px 10px 15px 1px rgba(0,0,0,0.8);
+  box-shadow: 10px 10px 15px 1px rgba(0,0,0,0.8);
+  border-radius: 4px 4px 4px 4px;
+  -moz-border-radius: 4px 4px 4px 4px;
+  -webkit-border-radius: 4px 4px 4px 4px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -642,7 +665,9 @@
 }
 
 .like-button {
-  position: relative;
+  position: absolute;
+  left: 15px;
+  top: 40px;
   cursor: pointer;
   height: 60px;
   width: 60px;
@@ -653,8 +678,10 @@
 }
 
 .dislike-button {
-  position: relative;
+  position: absolute;
   cursor: pointer;
+  left: 15px;
+  top: 40px;
   height: 60px;
   width: 60px;
   border: none;
@@ -664,6 +691,90 @@
   animation: shake 1s infinite;
 
 }
+
+.card-name {
+  display: flex;
+  width: 250px;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 22px;
+  font-weight: bold;
+  // border-radius: 8px 8px 8px 8px;
+  // -moz-border-radius: 8px 8px 8px 8px;
+  // -webkit-border-radius: 8px 8px 8px 8px;
+  // background: rgba(0,0,0, 0.2);
+
+}
+
+#badge {
+  height: 30px;
+  width: 30px;
+  border-radius: 200px 200px 200px 200px;
+  -moz-border-radius: 200px 200px 200px 200px;
+  -webkit-border-radius: 200px 200px 200px 200px;
+}
+
+
+#Water {
+  background-image: url(http://api.thumbr.it/whitenoise-300x464.png?background=6797eaff&noise=ffffff&density=39&opacity=78);
+}
+
+#Grass {
+  background-image: url(http://api.thumbr.it/whitenoise-300x464.png?background=89c05eff&noise=ffffff&density=39&opacity=78);
+}
+
+#Fire {
+  background-image: url(http://api.thumbr.it/whitenoise-300x464.png?background=e78540ff&noise=ffffff&density=39&opacity=78);
+}
+
+#Normal {
+  background-image: url(http://api.thumbr.it/whitenoise-300x464.png?background=a9a67cff&noise=ffffff&density=39&opacity=78);
+}
+
+#Fighting {
+  background-image: url(http://api.thumbr.it/whitenoise-300x464.png?background=b6422fff&noise=ffffff&density=39&opacity=78);
+}
+
+#Flying {
+  background-image: url(http://api.thumbr.it/whitenoise-300x464.png?background=a299ebff&noise=ffffff&density=39&opacity=78);
+}
+
+#Poison {
+  background-image: url(http://api.thumbr.it/whitenoise-300x464.png?background=97529dff&noise=ffffff&density=39&opacity=78);
+}
+
+#Ground {
+  background-image: url(http://api.thumbr.it/whitenoise-300x464.png?background=debe73ff&noise=ffffff&density=39&opacity=78);
+}
+
+#Rock {
+  background-image: url(http://api.thumbr.it/whitenoise-300x464.png?background=b79d48ff&noise=ffffff&density=39&opacity=78);
+}
+
+#Bug {
+  background-image: url(http://api.thumbr.it/whitenoise-300x464.png?background=adb23dff&noise=ffffff&density=39&opacity=78);
+}
+
+#Ghost {
+  background-image: url(http://api.thumbr.it/whitenoise-300x464.png?background=6c5f94ff&noise=ffffff&density=39&opacity=78);
+}
+
+#Electric {
+  background-image: url(http://api.thumbr.it/whitenoise-300x464.png?background=f6cd4fff&noise=ffffff&density=39&opacity=78);
+}
+
+#Psychic {
+  background-image: url(http://api.thumbr.it/whitenoise-300x464.png?background=ec6c89ff&noise=ffffff&density=39&opacity=78);
+}
+
+#Ice {
+  background-image: url(http://api.thumbr.it/whitenoise-300x464.png?background=a1d6d7ff&noise=ffffff&density=39&opacity=78);
+}
+
+#Dragon {
+  background-image: url(http://api.thumbr.it/whitenoise-300x464.png?background=615af0ff&noise=ffffff&density=39&opacity=78);
+}
+
 
 ::-webkit-input-placeholder {
    color: rgba(175, 52, 59, 1);

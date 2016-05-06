@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!-- saved from url=(0065)https://s0.2mdn.net/3396736/1460060705898/300x600_arts/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript">
+    
+      (function() {
+        var relegateNavigation = '';
+        var handleClickTagMessage = function(e) {
+          try {
+            var eventData = JSON.parse(e.data);
+          } catch (err) {
+            return;
+          }
+          if (eventData.isInitClickTag) {
+            if (eventData.clickTags) {
+              for (var i = 0; i < eventData.clickTags.length; i++) {
+                var clkTag = eventData.clickTags[i];
+                window[clkTag.name] = clkTag.url;
+              }
+            } else if (eventData.clickTag) {
+              window.clickTag = eventData.clickTag;
+            }
+            relegateNavigation = eventData.relegateNavigation;
+          }
+        };
+
+        if (open.call) {
+          window.open = function(open) {
+            return function(url, name, features) {
+              if (relegateNavigation === 'parent') {
+                var message = {'clickTag': url, 'isPostClickTag': true};
+                parent.postMessage(JSON.stringify(message), '*');
+              } else {
+                var args = [url, name];
+                if (features) {
+                  args.push(features);
+                }
+                open.apply(window, args);
+              }
+            };
+          }(window.open);
+        }
+
+        if (window.addEventListener) {
+          window.addEventListener(
+              'message', handleClickTagMessage, false);
+        } else {
+          window.attachEvent('onmessage', handleClickTagMessage);
+        }
+      })();
+    
+  </script>
+
+  		
+		<title>300x600</title>
+		<link href="./styles.css" rel="stylesheet" type="text/css">
+        
+        <!--clicktag part 1 start-->
+        <meta name="ad.size" content="width=300,height=600">
+		<script type="text/javascript">
+		var clickTag = "https://www.denver.org/"; </script>
+        <!--clicktag part 1 end-->
+        
+	</head>
+	<body>
+		<div id="background">
+			<div id="bg"><img src="./bg.png"></div>
+			<div id="image4"><img src="./image4.jpg"></div>
+			<div id="t1" style="visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);"><img src="./t1.png"></div>
+			<div id="t2" style="visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);"><img src="./t2.png"></div>
+			<div id="line" style="visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0); transform-origin: right center 0px;"><img src="./line.png"></div>
+			<div id="t3" style="visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);"><img src="./t3.png"></div>
+			<div id="image1" style="transform: matrix(1, 0, 0, 1, 0, -320); visibility: inherit; opacity: 1;"><img src="./image1.jpg"></div>
+			<div id="image2" style="transform: matrix(1, 0, 0, 1, 0, -480); visibility: inherit; opacity: 1;"><img src="./image2.jpg"></div>
+			<div id="image3" style="transform: matrix(1, 0, 0, 1, 0, -620); visibility: inherit; opacity: 1;"><img src="./image3.jpg"></div>
+			<div id="patch" style="transform: matrix(1, 0, 0, 1, 0, -400); visibility: inherit; opacity: 1;"><img src="./patch.png"></div>
+			<div id="logo"><img src="./logo.png"></div>
+			<div id="ctaOff"><img src="./ctaOff.png"></div>
+			<div id="ctaOn"><img src="./ctaOn.png"></div>
+			
+            <!--clicktag part 2 start-->
+			<a href="javascript:window.open(window.clickTag)"> 
+			<div id="hit"><img src="./hit.png" width="300" height="600" alt=""></div>
+			</a>
+			<!--clicktag part 2 end-->
+            
+		</div>
+        
+ 		<!--
+        <script src='TweenLite.min.js'></script>
+		<script src='CSSPlugin.min.js'></script>
+        <script src='EasePack.min.js'></script>
+        -->
+        
+<script src="./cssplugin_1.18.0_71489205621d46cbe88348eeb8fe493f_min.js"></script>
+<script src="./tweenlite_1.18.0_56fa823cfbbef1c2f4d4346f0f0e6c3c_min.js"></script>
+<script src="./easepack_1.18.0_ed5816e732515f56d96a67f6a2a15ccb_min.js"></script>
+<script src="./index.js"></script>
+  
+  
+  
+ 
+ </body></html>

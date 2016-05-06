@@ -1,0 +1,18 @@
+OX_2358039564({
+  "ads":{
+    "chain":1,
+    "medium":"w",
+    "record_tmpl":"http://ox-d.wikia.servedbyopenx.com/{medium}/1.0/{rtype}?ts={txn_state}",
+    "pixels":"http://us-u.openx.net/w/1.0/pd?plm=5&ph=50cd45fa-7093-4f15-95ec-1722f80fddf1",
+    "adunits" : [
+      {
+        "auid":"538229266",
+        "chain_timeout":"",
+        "chain_revenue":"",
+        "size":"160x600",
+        "chain":[
+        ]
+      }
+    ]
+  }
+});

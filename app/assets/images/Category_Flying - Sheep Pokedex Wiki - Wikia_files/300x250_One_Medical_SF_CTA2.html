@@ -1,0 +1,67 @@
+
+<!-- saved from url=(0158)http://aka-cdn-ns.adtechus.com/apps/25/Ad0St3Sz170Sq0V3Id25029145/300x250_One_Medical_SF_CTA2.html?p=3004956&rnd=557410452&n=rpfl_7450_PREFOOTER_LEFT_BOXAD_15 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript">
+function getArgs() {
+	var args = new Object();
+	var query = location.search.substring(1);
+	query = query.substring(query.indexOf('?') + 1);
+	var pairs = query.split("&");
+	for ( var i = 0; i < pairs.length; i++) {
+		var pos = pairs[i].indexOf('=');
+		if (pos == -1)
+			continue;
+		var argname = pairs[i].substring(0, pos);
+		var value = pairs[i].substring(pos + 1);
+		var v = value.replace(/\\+/g, " ");
+		v = unescape(v);
+		args[unescape(argname)] = v;
+	}
+	if (args.ADCOUNT == undefined)
+		args['ADCOUNT'] = '';
+	if (args.ADPATH == undefined)
+		args['ADPATH'] = '';
+	return args;
+}
+AD_vars = getArgs();
+;
+
+var ADTECH;
+function writeBanner(e){
+ADTECH=eval('('+e.data+')');
+var tmp="";
+tmp+=("<!DOCTYPE html>\n");
+tmp+=("<html>\n");
+tmp+=("<head><scr"+"ipt type=\"text/javascript\">window.ADTECH=eval('("+e.data+")');</scr"+"ipt>\n");
+tmp+=("	<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"/>\n");
+tmp+=("	<meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"/>\n");
+tmp+=("	<title>Untitled</title>\n");
+tmp+=("<scr"+"ipt type=\"text/javascript\" charset=\"utf-8\" src=\"https://animate.adobe.com/runtime/6.0.0/edge.6.0.0.min.js\"></scr"+"ipt>\n");
+tmp+=("<style>\n");
+tmp+=(".edgeLoad-EDGE-10670478 { visibility:hidden; }\n");
+tmp+=("</style>\n");
+tmp+=("<scr"+"ipt type=\"text/javascript\" src=\""+ADTECH.ADPATH+"extFile1.js\"></scr"+"ipt>\n");
+tmp+=("</head>\n");
+tmp+=("<body style=\"margin:0;padding:0;\">\n");
+tmp+=("	<div id=\"Stage\" class=\"EDGE-10670478\">\n");
+tmp+=("	</div>\n");
+tmp+=("</body>\n");
+tmp+=("</html>\n");
+
+document.write(tmp);document.close();
+try{window.ADTECH = eval('('+e.data+')');} catch (err) {}
+}
+var eM = window.addEventListener ? "addEventListener" : "attachEvent";
+var ev = window[eM];
+var mE = eM == "attachEvent" ? "onmessage" : "message";
+ev(mE, function hdl(e) {
+if( e.data &&  e.data.indexOf("ADPATH") >= 0){
+ADTECH = eval('('+e.data+')');
+var rE = window.removeEventListener?"removeEventListener":"detachEvent";
+var dv = window[rE];
+dv(mE,hdl,false);
+setTimeout(writeBanner(e), 0);
+}},false);
+var t=(AD_vars.n && AD_vars.n!=="")?parent.document.getElementById(AD_vars.n).contentWindow:parent;
+t.postMessage("INIT"+AD_vars.p, "*");
+</script>
+</head><body marginwidth="0" marginheight="0"></body></html>

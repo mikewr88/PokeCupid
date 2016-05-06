@@ -53,8 +53,8 @@ module.exports = React.createClass({
 
     return (
       <div>
-        <h1>Trainers Who Like You!</h1>
-        <br></br>
+        <h1 id='trainer-home-header'>Trainers Who Like You!</h1>
+        <h1 id='trainer-home-header'>You Must Have Used Attract</h1>
         <ul className="trainer-home-ul">
           {likerArray}
         </ul>

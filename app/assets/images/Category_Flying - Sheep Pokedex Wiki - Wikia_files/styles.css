@@ -1,0 +1,168 @@
+ body {
+	margin: 0;
+	padding: 0;
+	width: 300px;
+	height: 600px;
+ }
+ 
+ #background 
+{ 
+	 left: 0px; 
+	 top: 0px; 
+	 position: relative; 
+	 margin-left: auto; 
+	 margin-right: auto; 
+	 width: 300px;
+	 height: 600px; 
+	 overflow: hidden;
+	 z-index:0;
+	} 
+
+ #bg 
+{ 
+	 left: 0px; 
+	 top: 0px; 
+	 position: absolute; 
+	 width: 300px;
+	 height: 600px;
+	 z-index:1;
+} 
+
+ #image4 
+{ 
+	 left: 0px; 
+	 top: 0px; 
+	 position: absolute; 
+	 width: 300px;
+	 height: 600px;
+	 z-index:2;
+} 
+
+ #t1 
+{ 
+	 visibility:hidden;
+	 left: 46px; 
+	 top: 137px; 
+	 position: absolute; 
+	 width: 203px;
+	 height: 40px;
+	 z-index:3;
+} 
+
+ #t2 
+{ 
+	 visibility:hidden;
+	 left: 59px; 
+	 top: 188px; 
+	 position: absolute; 
+	 width: 178px;
+	 height: 40px;
+	 z-index:4;
+} 
+
+ #line 
+{ 
+	 visibility:hidden;
+	 left: 79px; 
+	 top: 240px; 
+	 position: absolute; 
+	 width: 137px;
+	 height: 1px;
+	 z-index:5;
+} 
+
+ #t3 
+{ 
+	 visibility:hidden;
+	 left: 34px; 
+	 top: 275px; 
+	 position: absolute; 
+	 width: 226px;
+	 height: 25px;
+	 z-index:6;
+} 
+
+ #image1 
+{ 
+	 visibility:hidden;
+	 left: 0px; 
+	 top: 0px; 
+	 position: absolute; 
+	 width: 300px;
+	 height: 199px;
+	 z-index:9;
+} 
+
+ #image2 
+{ 
+	 visibility:hidden;
+	 left: 0px; 
+	 top: 197px; 
+	 position: absolute; 
+	 width: 300px;
+	 height: 198px;
+	 z-index:8;
+} 
+
+ #image3 
+{ 
+	 visibility:hidden;
+	 left: 0px; 
+	 top: 395px; 
+	 position: absolute; 
+	 width: 300px;
+	 height: 205px;
+	 z-index:7;
+} 
+
+ #patch 
+{ 
+	 visibility:hidden;
+	 left: 0px; 
+	 top: 0px; 
+	 position: absolute; 
+	 width: 300px;
+	 height: 600px;
+	 z-index:10;
+} 
+
+ #logo 
+{ 
+	 left: 91px; 
+	 top: 418px; 
+	 position: absolute; 
+	 width: 209px;
+	 height: 182px;
+	 z-index:11;
+} 
+
+ #ctaOff 
+{ 
+	 left: 35px; 
+	 top: 538px; 
+	 position: absolute; 
+	 width: 170px;
+	 height: 51px;
+	 z-index:12;
+} 
+
+ #ctaOn 
+{ 
+	 visibility:hidden;
+	 left: 35px; 
+	 top: 538px; 
+	 position: absolute; 
+	 width: 170px;
+	 height: 51px;
+	 z-index:13;
+} 
+
+ #hit 
+{ 
+	 left: 0px; 
+	 top: 0px; 
+	 position: absolute; 
+	 width: 300px;
+	 height: 600px;
+	 z-index:14;
+} 
