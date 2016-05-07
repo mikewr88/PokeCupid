@@ -1,137 +1,96 @@
+== README
+
+This README would normally document whatever steps are necessary to get the
+application up and running.
+
+Things you may want to cover:
+
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
+
+
+
 # PokeCupid
 
-[Heroku link][heroku] **NB:** This should be a link to your production site
+###[Live link](https://poke-cupid.herokuapp.com/)
 
-[heroku]: http://www.herokuapp.com
+This application is a fun take on the dating website OkCupid. The purpose of the site is to see and meet other 'Pokemon Trainers' like you. This full stack application is completed with Ruby on Rails and React.js. Inspiration for the application comes from [OkCupid](okcupid.com) and Pokemon.
 
-## Minimum Viable Product
+## Application Features
 
-PokeCupid is a web application inspired by OkCupid that will be build using Ruby on Rails and React.js.  By the end of Week 9, this app will, at a minimum, satisfy the following criteria:
+#### Home page with new User Sign Up
+![home_page]
 
-- [x] New account creation, login, and guest/demo login
-- [x] Smooth, bug-free navigation
-- [x] Adequate seed data to demonstrate the site's features
-- [x] The necessary features for the site: making a profile, liking other people, viewing details of other profiles, notification of likes and visitors in the nav bar
-- [x] Hosting on Heroku
-- [x] CSS styling that is visually appealing and emulates that of OkCupid
+#### Login modal with Pokeball shape
+![modal]
 
-## Product Goals and Priorities
+#### Index page of all Trainers on the site. Background is according to your selected type. Trainer card color according to their type
+![index]
 
-PokeCupid will allow users to do the following:
+#### Dynamic filtering allowing users to mix and match compounded search parameters and receive instant updates
+![filter]
 
-- [x] Create an account (MVP)
-- [x] Log in / Log out, including as a Guest/Demo User (MVP)
-- [x] Create a detailed profile (MVP)
-- [x] Browse photos and usernames for all users (MVP)
-- [x] Search for other users (MVP)
-- [x] Like, view, and communicate with other users (the latter being non-MVP)
-- [x] See who has viewed your profile (MVP)
-- [x] Ability to Filter Users by certain criteria (MVP)
-- [x] Adequate styling (MVP)
-- [ ] Quickmatch that recommends a user based on profile data (non-MVP)
+#### View other Trainers that have liked your profile
+![likes]
 
-## Design Docs
-* [View Wireframes][views]
-* [React Components][components]
-* [Flux Cycles][flux-cycles]
-* [API endpoints][api-endpoints]
-* [DB schema][schema]
+#### View other Trainers that have visited your profile
+![visits]
+
+#### A profile page for each user with all of their info and details
+![show]
+
+[home_page]: ./docs/screenshots/homepage.png
+[filter]: ./docs/screenshots/filterindex.png
+[modal]: ./docs/screenshots/modallogin.png
+[index]: ./docs/screenshots/homeindex.png
+[likes]: ./docs/screenshots/likepage.png
+[visits]: ./docs/screenshots/visitpage.png
+[show]: ./docs/screenshots/showpage.png
+
+## Technical Features
+
+###Stack
+* Ruby on Rails
+* React.js
+* Postgresql
+
+###Models Schema
+* Users
+* Likes
+* Visits
+
+###APIs
+* Cloudinary API
+
+## Todos
+* refactor code to be shorter and better to read
+* make the trainer show page a modal with a Pokedex style
+* add pokemon creation
+* profile page for the current user
+* messaging
+
+## Future Features
+* **Pokemon creation and interaction:** Add pokemon to your profile
+* **Messaging model:** complete messaging between users
+
 
 [views]: ./docs/views.md
 [components]: ./docs/components.md
-[flux-cycles]: ./docs/flux-cycles.md
+[stores]: ./docs/stores.md
 [api-endpoints]: ./docs/api-endpoints.md
 [schema]: ./docs/schema.md
-
-## Implementation Timeline
-
-### Phase 1: Backend setup and User Authentication (2 days)
-
-**Objective:** Functioning rails project with Authentication
-
-- [x] create new project
-- [x] create `User` model
-- [x] authentication
-- [x] user signup/signin pages
-- [x] blank landing page after signin
-
-### Phase 2: Trainer Model, API, and basic APIUtil (2.5 days)
-
-**Objective:** Trainers can be viewed created and searched
-
-- [x] jBuilder views for Users
-- [x] setup Webpack & Flux scaffold
-- [x] setup `APIUtil` to interact with the API
-- [x] test out API interaction in the console.
-- [x] setup the flux loop with skeleton files
-- [x] setup React Router
-- implement each Trainer component, building out the flux loop as needed.
-  - [x] `TrainerHome`
-  - [x] `TrainerIndexItem`
-  - [x] `SearchBar`
-  - [x] `Visitors`
-  - [x] `TrainerShow`
-  - [x] `Likes`
-
-### Phase 3: Likes and Visitors (1 day)
-
-**Objective:** Visitors belong to Users. Users can like other users, that user can see who liked them. seeding
-
-- [x] create `Likes` and `Visitors` model
-- build out API, Flux loop, and components for:
-  - [x] Likes and Visitors CRUD
-  - [x] Liking a user or visiting a user's page notifies that user
-  - [x] Visitor Index shows visitors to your profile
-  - [x] Likes Index Page
-- [x] seed the database with a small amount of test data
-
-
-### Phase 4: NavBar and Styling (2.5 days)
-
-**Objective:** Able to view pages for Trainers. Links to other pages work. NavBar will allow links
-to other pages as well
-
-- [x] create NavBar
-- [x] create a basic style guide
-- [x] position elements on the page
-- [x] add basic colors & styles
-- [x] make notification bubbles for visited and likes
-- [x] can search for a user and screen will populate with matches to search string
-- [x] can filter users based on certain criteria
-
-### Phase 5: Styling Cleanup and fixing up (1.5 days)
-
-**objective:** Make the site feel more cohesive and clean.
-
-- [x] Get feedback on my UI from others
-- [x] Refactor HTML classes & CSS rules
-- [x] Add transitions and other styling flourishes.
-
-
-### Phase 6: Pokemon (1.5 days) (bonus)
-
-**Objective:** Existing pages (including singup/signin) will look good. Pokemon can be created, viewed, destroyed through
-the API.
-
-- [ ] create `Pokemon` model
-- [ ] CRUD API for Pokemon (`PokemonsController`)
-- [ ] jBuilder views for Pokemon
-- implement each Pokemon component, building out the flux loop as needed.
-  - [ ] `PokemonIndex`
-  - [ ] `PokemonDetail`
-  - [ ] `PokemonForm`
-- [ ] can create and remove Pokemon for your profile
-
-
-### Bonus Features (TBD)
-- [ ] dropdown menu for Visitors/Likes in NavBar
-- [ ] Pagination / infinite scroll for TrainerIndex
-- [ ] Add chat between users
-- [ ] Add music to the site that plays, maybe changes when you navigate to different page
-- [ ] Multiple sessions
-
-[phase-one]: ./docs/phases/phase1.md
-[phase-two]: ./docs/phases/phase2.md
-[phase-three]: ./docs/phases/phase3.md
-[phase-four]: ./docs/phases/phase4.md
-[phase-five]: ./docs/phases/phase5.md
