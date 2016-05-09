@@ -87,6 +87,44 @@
    -webkit-border-radius: 200px 200px 200px 200px;
  }
 
+ #navbar-profile {
+   position: relative;
+ }
+
+ #navbar-badge {
+   cursor: pointer;
+   height: 35px;
+   width: 35px;
+   border-radius: 200px 200px 200px 200px;
+   -moz-border-radius: 200px 200px 200px 200px;
+   -webkit-border-radius: 200px 200px 200px 200px;
+   border: 1px solid black;
+ }
+
+ #profile-buttons {
+   display: none;
+   width: 80px;
+   border-radius: 3px 3px 3px 3px;
+   -moz-border-radius: 3px 3px 3px 3px;
+   -webkit-border-radius: 3px 3px 3px 3px;
+ }
+
+ #profile-buttons .nav-button {
+   width: 80px;
+   height: 24px;
+   font-size: 16px;
+   border-top: 1px solid black;
+ }
+
+ #navbar-profile:hover #profile-buttons {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   position: absolute;
+   z-index: 100;
+   right: 1px;
+ }
+
  li {
    list-style: none;
  }
@@ -322,9 +360,10 @@
 }
 
 .trainer-show-img {
-  width: 100% !important;
-  height: auto !important;
-  
+  // width: 100% !important;
+  // height: auto !important;
+  max-width: inherit;
+
   border-radius: 42px 42px 42px 42px;
   -moz-border-radius: 42px 42px 42px 42px;
   -webkit-border-radius: 42px 42px 42px 42px;
@@ -334,7 +373,8 @@
 #show-img-container {
   display: flex;
   align-items: center;
-  width: 400px;
+  max-width: 400px;
+  max-height: 500px;
 }
 
 #show-page {
@@ -582,10 +622,11 @@
 
 #modal-button-div {
   display: flex;
-  // flex-direction: row-reverse;
+  position: relative;
   justify-content: space-between;
   align-items: center;
-  width: 40%;
+  width: 400px;
+  right: 20px;
   // height: 90%;
 }
 

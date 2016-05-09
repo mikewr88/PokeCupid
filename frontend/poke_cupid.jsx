@@ -6,6 +6,7 @@ var React = require('react'),
     Visitors = require('./components/visitors'),
     NavBar = require('./components/navBar'),
     Likes = require('./components/likers'),
+    Profile = require('./components/profile'),
     Router = require('react-router').Router,
     Route = require('react-router').Route,
     IndexRoute = require('react-router').IndexRoute,
@@ -23,7 +24,7 @@ var React = require('react'),
     redirectToHome: function () {
 
       if (this.props.location.pathname === '/' && SessionStore.currentUser()){
-        
+
         hashHistory.push('trainer-home');
       }
     },
@@ -60,6 +61,7 @@ var React = require('react'),
         <Route path='trainer/:trainerId' component={TrainerShow}/>
         <Route path='visitors' component={Visitors}/>
         <Route path='likes' component={Likes}/>
+        <Route path='profile' component={Profile}/>
     </Route>
   );
 

@@ -85,7 +85,7 @@ User.create(username: 'PikaFan',
             location: "Lavender Town",
             password: 'password',
             description: "Pika Pika",
-            image_url: 'http://i.imgur.com/VOBd1Du.png'
+            image_url: 'http://i.imgur.com/Cpsvd8d.png'
 )
 
 User.create(username: 'SquirtleDude',
@@ -94,7 +94,7 @@ User.create(username: 'SquirtleDude',
             location: "Cerulean City",
             password: 'password',
             description: "Water Pokemon are the Best! I love Blastoise the most!",
-            image_url: 'http://i.imgur.com/VOBd1Du.png'
+            image_url: 'http://i.imgur.com/0lROie8.png'
 )
 
 User.create(username: 'Eric',

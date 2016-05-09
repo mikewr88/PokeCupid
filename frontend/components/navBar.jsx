@@ -10,7 +10,12 @@ var TrainerActions = require('../actions/client_actions/trainer_actions');
 module.exports = React.createClass({
 
   getInitialState: function () {
-    return {numVisitors: 0, numLikes: 0};
+    return {numVisitors: 0, numLikes: 0, currentUser: null};
+  },
+
+  componentWillMount: function () {
+    this.sessionListener = SessionStore.addListener(this.getCurrentUser);
+    SessionActions.fetchCurrentUser();
   },
 
   componentDidMount: function () {
@@ -23,6 +28,11 @@ module.exports = React.createClass({
   componentWillUnmount: function () {
     this.visitorListener.remove();
     this.likesListener.remove();
+    this.sessionListener.remove();
+  },
+
+  getCurrentUser: function () {
+    this.setState({currentUser: SessionStore.currentUser()});
   },
 
   getVisitors: function () {
@@ -42,6 +52,10 @@ module.exports = React.createClass({
     hashHistory.push('/likes');
   },
 
+  goToProfile: function () {
+    hashHistory.push('/profile');
+  },
+
   handleLogOut: function (event) {
     event.preventDefault();
     SessionActions.logOut();
@@ -53,6 +67,20 @@ module.exports = React.createClass({
   },
 
   render: function () {
+    var profile;
+    if (SessionStore.currentUser()){
+      profile = (
+        <div id='navbar-profile'>
+          <img id='navbar-badge' src={SessionStore.currentUser().image_url}></img>
+          <div id='profile-buttons'>
+            <button className='nav-button' onClick={this.handleLogOut}>Log Out</button>
+            <button className='nav-button' onClick={this.goToProfile}>Profile</button>
+
+          </div>
+
+        </div>
+      );
+    }
     return (
       <div className="nav-bar">
         <div id="logo-title" onClick={this.handleLogo}>
@@ -66,8 +94,8 @@ module.exports = React.createClass({
           <button className='nav-button' onClick={this.goToLikes}>Likes
             <div className="bubble">{this.state.numLikes}</div>
           </button>
-          <button className='nav-button' onClick={this.handleLogOut}>Log Out</button>
 
+          {profile}
         </div>
 
       </div>
