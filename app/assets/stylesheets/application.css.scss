@@ -33,11 +33,15 @@
    outline: none;
  }
 
- html {
+ .footer {
+   height: 75px;
+   display: flex;
+   justify-content: center;
  }
 
-
- #root {
+ #github {
+   height: 50px;
+   width: auto;
  }
 
  .nav-bar {

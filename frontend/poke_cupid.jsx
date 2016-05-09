@@ -5,6 +5,7 @@ var React = require('react'),
     TrainerShow = require('./components/trainerShow'),
     Visitors = require('./components/visitors'),
     NavBar = require('./components/navBar'),
+    Footer = require('./components/footer'),
     Likes = require('./components/likers'),
     Profile = require('./components/profile'),
     Router = require('react-router').Router,
@@ -34,9 +35,11 @@ var React = require('react'),
     },
 
     render: function () {
+      var footer;
       var AuthOrNav;
       if (this.props.location.pathname === '/'){
         AuthOrNav = (<LoginForm />);
+        footer = (<Footer/>);
       }else {
         AuthOrNav = (<NavBar />);
       }
@@ -49,6 +52,7 @@ var React = require('react'),
         <div className={trainerClass}>
           {AuthOrNav}
           {this.props.children}
+          {footer}
         </div>
       );
     }

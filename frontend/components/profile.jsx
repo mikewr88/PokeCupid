@@ -14,6 +14,14 @@ module.exports = React.createClass({
     TrainerActions.fetchAllTrainers();
   },
 
+  componentDidMount: function () {
+    this.trainerListener = TrainerStore.addListener(this.getTrainer);
+  },
+
+  getTrainer: function () {
+    this.setState({trainer: TrainerStore.find(parseInt(SessionStore.currentUser().id))});
+  },
+
   redirect: function () {
     if (!SessionStore.currentUser()){
       hashHistory.push('/');
