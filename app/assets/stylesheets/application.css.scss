@@ -111,11 +111,13 @@
    border-radius: 3px 3px 3px 3px;
    -moz-border-radius: 3px 3px 3px 3px;
    -webkit-border-radius: 3px 3px 3px 3px;
+   border-bottom: 1px solid black;
  }
 
  #profile-buttons .nav-button {
+   padding: 4px;
    width: 80px;
-   height: 24px;
+   height: 30px;
    font-size: 16px;
    border-top: 1px solid black;
  }
@@ -127,6 +129,7 @@
    position: absolute;
    z-index: 100;
    right: 1px;
+   top: 46px;
  }
 
  li {

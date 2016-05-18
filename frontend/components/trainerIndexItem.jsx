@@ -94,7 +94,7 @@ module.exports = React.createClass({
 
     return (
 
-      <li className='trainer-index-item' id={this.props.trainer.trainer_type}>
+      <li className='trainer-index-item' key={this.props.trainer.id} id={this.props.trainer.trainer_type}>
         <div className='card-name'>
           <p>{this.props.trainer.username}</p>
           <img id='badge' src={badge}></img>
