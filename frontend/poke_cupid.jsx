@@ -60,7 +60,6 @@ var React = require('react'),
 
   var routes = (
     <Route path ='/' component={App}>
-
         <Route path='trainer-home' component={TrainerHome}/>
         <Route path='trainer/:trainerId' component={TrainerShow}/>
         <Route path='visitors' component={Visitors}/>

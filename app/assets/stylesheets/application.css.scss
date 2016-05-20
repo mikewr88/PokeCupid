@@ -44,6 +44,11 @@
    width: auto;
  }
 
+ #transition {
+   z-index: 101;
+   height: 100vh;
+ }
+
  .nav-bar {
    background-color: white;
    -webkit-box-shadow: 0px 5px 5px 0px rgba(107,107,107,1);
@@ -58,8 +63,13 @@
    align-self: flex-end;
    display: flex;
    justify-content: space-around;
-   height: 45px;
+   align-items: center;
+   height: 60px;
    width: 30%;
+ }
+
+ #nav-button-container > .nav-button {
+   font-size: 14px;
  }
 
  .nav-button {
@@ -93,12 +103,15 @@
 
  #navbar-profile {
    position: relative;
+   height: 100%;
+   display: flex;
+   align-content: center;
  }
 
  #navbar-badge {
    cursor: pointer;
-   height: 35px;
-   width: 35px;
+   height: 50px;
+   width: 50px;
    border-radius: 200px 200px 200px 200px;
    -moz-border-radius: 200px 200px 200px 200px;
    -webkit-border-radius: 200px 200px 200px 200px;
@@ -107,7 +120,7 @@
 
  #profile-buttons {
    display: none;
-   width: 80px;
+   width: 110px;
    border-radius: 3px 3px 3px 3px;
    -moz-border-radius: 3px 3px 3px 3px;
    -webkit-border-radius: 3px 3px 3px 3px;
@@ -115,10 +128,10 @@
  }
 
  #profile-buttons .nav-button {
-   padding: 4px;
-   width: 80px;
-   height: 30px;
-   font-size: 16px;
+   padding: 6px;
+   width: 110px;
+   height: 40px;
+   font-size: 20px;
    border-top: 1px solid black;
  }
 
@@ -129,7 +142,7 @@
    position: absolute;
    z-index: 100;
    right: 1px;
-   top: 46px;
+   top: 60px;
  }
 
  li {
@@ -263,11 +276,11 @@
  }
 
  .nav-bar #cupid {
-   font-size: 30px;
+   font-size: 40px;
  }
 
  .nav-bar #poke {
-   font-size: 30px;
+   font-size: 40px;
  }
 
 #login-button {
@@ -295,8 +308,8 @@
 }
 
 .logo-nav {
-  height: 40px;
-  width: 40px;
+  height: 60px;
+  width: 60px;
 }
 
 .index-image {
@@ -474,6 +487,7 @@
 .sign-up-dropdown {
   -webkit-appearance: menulist-text;
   font-family: 'Martel Sans', sans-serif;
+  font-size: 14px;
   cursor: pointer;
   padding: 4px;
   color: rgb(175, 52, 59);
@@ -519,6 +533,7 @@
 
 #all-trainer-button {
   font-family: 'Martel Sans', sans-serif;
+  font-size: 14px;
   cursor: pointer;
   padding: 4px;
   color: rgb(175, 52, 59);
@@ -542,7 +557,7 @@
   right: 10px;
   display: flex;
   justify-content: space-between;
-  width: 270px;
+  width: 370px;
   padding: 5px;
 }
 
@@ -600,7 +615,7 @@
   cursor: pointer;
   display: flex;
   align-items: center;
-  height: 50px;
+  height: 70px;
 }
 
 .splash-header > #logo-title {

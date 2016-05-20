@@ -44,8 +44,8 @@ module.exports = {
       dataType: 'json',
       data: {user: {username: data.username, password: data.password}},
       success: function (user) {
-        SessionServerActions.logIn(user);
-        hashHistory.push('/trainer-home');
+          SessionServerActions.logIn(user);
+          hashHistory.push('/trainer-home');
       },
       error: function(errors) {
         SessionServerActions.receiveErrors(errors.responseText);
