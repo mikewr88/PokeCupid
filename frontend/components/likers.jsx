@@ -40,6 +40,7 @@ module.exports = React.createClass({
 
     var likerArray = [];
     var likers = this.state.likers;
+    var i = 0;
     likers.forEach(function (liker){
       var liked;
       if (this.state.likees.indexOf(liker.id) === -1) {
@@ -47,7 +48,8 @@ module.exports = React.createClass({
       }else{
         liked= true;
       }
-       likerArray.push(<TrainerIndexItem liked={liked} trainer={liker}/>);
+       likerArray.push(<TrainerIndexItem key ={i} liked={liked} trainer={liker}/>);
+       i++;
     }.bind(this));
 
 

@@ -32,7 +32,7 @@ module.exports = React.createClass({
             trainer_type: "Water",
             gender: "♂",
             description: '',
-            image_url: null
+            image_url: "http://i.imgur.com/VOBd1Du.png"
           };
   },
 

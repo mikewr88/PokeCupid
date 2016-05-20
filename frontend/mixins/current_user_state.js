@@ -2,7 +2,7 @@ var SessionStore = require('../stores/session_store');
 var SessionActions = require('../actions/client_actions/session_actions');
 var TrainerActions = require('../actions/client_actions/trainer_actions');
 
-module.exports = {
+var CurrentUserStateMixin = {
   getInitialState: function () {
     return  {
       currentUser: SessionStore.currentUser()
@@ -10,13 +10,22 @@ module.exports = {
   },
 
   componentWillMount: function () {
-    SessionStore.addListener(this.updateCurrentUser);
+    this.sessionListener = SessionStore.addListener(this.updateCurrentUser);
     if (typeof SessionStore.currentUser()=== 'undefined'){
       SessionActions.fetchCurrentUser();
     }else {
       TrainerActions.fetchVisitors();
       TrainerActions.fetchLikers();
     }
+  },
+
+  // componentDidMount:function () {
+  //   this.sessionListener = SessionStore.addListener(this.updateCurrentUser);
+  //
+  // },
+
+  componentWillUnmount: function () {
+    this.sessionListener.remove();
   },
 
   updateCurrentUser: function () {
@@ -26,3 +35,5 @@ module.exports = {
     });
   }
 };
+
+module.exports = CurrentUserStateMixin;

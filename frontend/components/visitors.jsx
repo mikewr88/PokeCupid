@@ -50,6 +50,7 @@ module.exports = React.createClass({
 
     var visitorArray = [];
     var visitors = this.state.visitors;
+    var i = 0;
     visitors.forEach(function (visitor){
       var liked;
       if (this.state.likees.indexOf(visitor.id) === -1) {
@@ -57,7 +58,8 @@ module.exports = React.createClass({
       }else{
         liked= true;
       }
-       visitorArray.push(<TrainerIndexItem liked={liked} trainer={visitor}/>);
+       visitorArray.push(<TrainerIndexItem key = {i} liked={liked} trainer={visitor}/>);
+       i++;
     }.bind(this));
 
 

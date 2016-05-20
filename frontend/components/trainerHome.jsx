@@ -104,6 +104,7 @@ module.exports = React.createClass({
 
     var trainerArray = [];
     var trainers = this.state.trainers;
+    var i = 0;
     trainers.forEach(function (trainer){
       var liked;
       if (this.state.likees.indexOf(trainer.id) === -1) {
@@ -111,7 +112,8 @@ module.exports = React.createClass({
       }else{
         liked= true;
       }
-       trainerArray.push(<TrainerIndexItem liked={liked} trainer={trainer}/>);
+       trainerArray.push(<TrainerIndexItem key ={i} liked={liked} trainer={trainer}/>);
+       i++;
     }.bind(this));
       return (
         <div>

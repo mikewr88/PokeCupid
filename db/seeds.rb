@@ -6,6 +6,16 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+urls = [
+  "http://2.media.dorkly.cvcdn.com/57/22/8af3ab0e5bfa5583fb00f4a015bb90a9-amazing-fan-art-of-all-151-original-pokemon-by-151-different-artists.jpg",
+  "http://g02.a.alicdn.com/kf/HTB1r6xZIpXXXXaNXpXXq6xXFXXXc/Livraison-gratuite-pokemon-Art-affiche-40-x-60-cm-d&eacute;coration-murale-meilleur-cadeau-pour-les-enfants.jpg",
+  "http://www.everybodyplays.co.uk/images/articlepics/1738.jpg",
+  "http://1.media.dorkly.cvcdn.com/95/47/5a6916fb7e81bbee968caa0c62760ad9.jpg",
+  "https://pokewalls.files.wordpress.com/2011/07/59arcanine1600x1200.jpg",
+  "http://3.bp.blogspot.com/-L-1LOTT54S4/UMAjpByIlPI/AAAAAAAAAJQ/5HFz5rU-mq4/s1600/Zapdos__lord_of_thunderstorms_by_raykins.png",
+  "http://i.imgur.com/VOBd1Du.png"
+]
+
 type_arr = ['Water',
 'Grass',
 'Fire',
@@ -103,7 +113,7 @@ User.create(username: 'Eric',
             location: "Saffron City",
             password: 'password',
             description: "Go Bulbasaur. He is the best. I will only date Grass trainers. No exceptions.",
-            image_url: 'http://i.imgur.com/VOBd1Du.png'
+            image_url: 'http://2.media.dorkly.cvcdn.com/57/22/8af3ab0e5bfa5583fb00f4a015bb90a9-amazing-fan-art-of-all-151-original-pokemon-by-151-different-artists.jpg'
 )
 
 User.create(username: 'charmansMan',
@@ -112,7 +122,7 @@ User.create(username: 'charmansMan',
             location: "Pallet Town",
             password: 'password',
             description: "I love normal type Pokemon. I must say my favorite Pokemon of all time is Zubat because they are very rare.",
-            image_url: 'http://i.imgur.com/VOBd1Du.png'
+            image_url: 'http://1.media.dorkly.cvcdn.com/95/47/5a6916fb7e81bbee968caa0c62760ad9.jpg'
 )
 
 User.create(username: 'kyle',
@@ -121,7 +131,7 @@ User.create(username: 'kyle',
             location: "Cinnabar Island",
             password: 'password',
             description: "I like Electric Pokemon",
-            image_url: 'http://i.imgur.com/VOBd1Du.png'
+            image_url: 'http://3.bp.blogspot.com/-L-1LOTT54S4/UMAjpByIlPI/AAAAAAAAAJQ/5HFz5rU-mq4/s1600/Zapdos__lord_of_thunderstorms_by_raykins.png'
 )
 
 User.create(username: 'Gary',
@@ -151,6 +161,17 @@ User.create(username: 'Jessie',
             image_url: 'http://i.imgur.com/y5Uliku.jpg'
 )
 
+User.create(username: 'BirdJesus',
+            trainer_type: "Flying",
+            gender: "♀",
+            location: "Saffron City",
+            password: 'meowth',
+            description: descriptions.sample,
+            image_url: 'http://o.aolcdn.com/hss/storage/adam/34acb97b670f621fd39fa7d593947644/Wju4miv.jpg'
+)
+
+
+
 100.times do
   User.create(username: Faker::Internet.user_name,
               trainer_type: type_arr.sample,
@@ -158,7 +179,7 @@ User.create(username: 'Jessie',
               location: location.sample,
               password: 'password',
               description: descriptions.sample,
-              image_url: 'http://i.imgur.com/VOBd1Du.png'
+              image_url: urls.sample
   )
 end
 
