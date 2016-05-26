@@ -127,13 +127,19 @@ module.exports = React.createClass({
 
       return (
         <div className='splash-page'>
+          <div id="pokeball-button">
+            <button id="poke-modal-button" onClick={this.guestLogin} value='logIn' >
+              <div>Guest Log In</div>
+            </button>
+
+          </div>
           <span className='splash-header'>
             <div id="logo-title">
               <img src="http://i.imgur.com/g2sYshv.png" className='logo'></img>
               <h1 id='poke'>Poke</h1><h1 id='cupid'>Cupid</h1>
             </div>
             <div id='modal-button-div'>
-              <button id="modal-button" onClick={this.guestLogin} >Log In As Guest</button>
+              
               <button id="modal-button" onClick={this.openModal} value='logIn' >Already Have An Account?</button>
             </div>
           </span>
@@ -162,7 +168,13 @@ module.exports = React.createClass({
 
           {allErrors}
         <form className='sign-up-form'>
-          <div id="tagline">Tired of Trying to Catch Em All? Join PokeCupid Today!</div>
+          <div id="tagline">Tired of Trying to Catch Em All?</div>
+            <div id="logo-title">
+              <div id="tagline">Join </div> &nbsp; &nbsp;
+              <h1 id='poke'>Poke</h1><h1 id='cupid'>Cupid</h1>&nbsp; &nbsp;
+              <div id="tagline"> Today!</div>
+            </div>
+
           <br></br>
           <label>Enter a Username:       <input className="input-text" type='text' valueLink={this.linkState('username')}></input>
           </label>
@@ -194,7 +206,7 @@ module.exports = React.createClass({
           <br></br>
 
 
-            <textarea rows='4' cols='50' placeholder='Add a description' className='description' valueLink={this.linkState('description')}></textarea>
+            <textarea rows='5' cols='60' placeholder='Add a description' className='description' valueLink={this.linkState('description')}></textarea>
 
           <Upload setImage={this.handleImage} />
           <div id="sign-up-bt-div">

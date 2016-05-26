@@ -25,7 +25,7 @@ content : {
     width           : '365px',
     border          : '1px solid black',
     padding         : '20px',
-    zindex         : 11,
+    zindex         : 100,
     boxShadow       : '12px 12px 20px 3px rgba(0,0,0,0.8)'
   }
 };
