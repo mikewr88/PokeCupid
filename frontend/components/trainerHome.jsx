@@ -116,7 +116,7 @@ module.exports = React.createClass({
        i++;
     }.bind(this));
       return (
-        <div>
+        <div id="index-page">
 
           <div id="trainer-home-container">
             <div id="trainer-home-header">Browse Trainers</div>

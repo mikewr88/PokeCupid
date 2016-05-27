@@ -158,6 +158,9 @@
  }
 
  .trainer-home-ul {
+   padding: 50px;
+   margin-left: 10px;
+   margin-right: 10px;
    display: flex;
    flex-wrap: wrap;
    justify-content: space-around;
@@ -166,12 +169,21 @@
 
  #trainer-home-header {
    position: relative;
+   font-size: 50px;
+   color: white;
+   height: 50px;
+  //  top: 10px;
+   left: 50px;
+ }
+
+ #visitor-like-home-header {
+   position: relative;
    font-size: 30px;
    color: white;
    height: 50px;
    top: 10px;
-   left: 50px;
- }
+   left: 250px;
+  }
 
  body {
    font-family: 'Martel Sans', sans-serif;
@@ -262,7 +274,7 @@
 
  .splash-page {
    background-color: rgb(175, 52, 59);
-   height: 900px;
+   height: 920px;
    display: flex;
    justify-content: space-between;
    flex-direction: column;
@@ -452,9 +464,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#af343a', end
   font-size: 20px;
   background: rgba(89,89,89, 0.5);
   color: white;
-  -webkit-box-shadow: 10px 10px 15px 1px rgba(0,0,0,0.8);
-  -moz-box-shadow: 10px 10px 15px 1px rgba(0,0,0,0.8);
-  box-shadow: 10px 10px 15px 1px rgba(0,0,0,0.8);
+  -webkit-box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.8);
+  -moz-box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.8);
+  box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.8);
   border-radius: 4px 4px 4px 4px;
   -moz-border-radius: 4px 4px 4px 4px;
   -webkit-border-radius: 4px 4px 4px 4px;
@@ -476,6 +488,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#af343a', end
   width: 220px;
   display: flex;
   justify-content: center;
+  margin-bottom: 20px;
 }
 
 .trainer-index-item {
@@ -484,8 +497,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#af343a', end
   width: 300px;
   padding: 5px;
   border: rgb(225, 191, 59) solid 8px;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  // margin-top: 15px;
+  // margin-bottom: 15px;
+  margin: 15px;
   -webkit-box-shadow: 0px 7px 15px 0px rgba(37,37,37,0.8);
   -moz-box-shadow: 0px 7px 15px 0px rgba(37,37,37,0.8);
   box-shadow: 0px 7px 15px 0px rgba(37,37,37,0.8);
@@ -500,8 +514,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#af343a', end
 
 .sign-up-form {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   height: auto;
+  max-height: 700px;
   width: 70%;
   flex-direction: column;
   align-items: center;
@@ -514,6 +529,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#af343a', end
   // font-weight: bold;
   // text-shadow: 1px 1px gray;
 }
+
 
 #pokeball-button {
   width: 200px;
@@ -817,8 +833,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#af343a', end
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: white;
-  color: red;
+  color: white;
+  margin: 10px;
+  -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 0px;
 }
 
 .upload-button-container {

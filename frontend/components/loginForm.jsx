@@ -139,18 +139,16 @@ module.exports = React.createClass({
               <h1 id='poke'>Poke</h1><h1 id='cupid'>Cupid</h1>
             </div>
             <div id='modal-button-div'>
-              
+
               <button id="modal-button" onClick={this.openModal} value='logIn' >Already Have An Account?</button>
             </div>
           </span>
 
           <Modal className="login-modal" isOpen={this.state.modalOpen} style={ModalStyle} onRequestClose={this.closeModal}>
-            {allErrors}
 
 
 
             <form id="login-form">
-
               <label id='username'>Username:        <input className="input-text input-modal username" type='text' valueLink={this.linkState('username')} autofocus></input>
               </label>
                 <br></br>
@@ -166,8 +164,9 @@ module.exports = React.createClass({
           </Modal>
 
 
-          {allErrors}
+
         <form className='sign-up-form'>
+            {allErrors}
           <div id="tagline">Tired of Trying to Catch Em All?</div>
             <div id="logo-title">
               <div id="tagline">Join </div> &nbsp; &nbsp;
